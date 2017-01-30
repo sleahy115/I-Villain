@@ -2,10 +2,52 @@
 <html>
   <head>
     <meta charset="utf-8">
-
+    <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/scripts.js"></script>
     <title>i-villain</title>
   </head>
   <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>I Villain!</h1>
+      </div>
+      <h2>Lets figure out which villain you should play:</h2>
+      <div class="form-group">
+        <form class="form-group">
+          <h3>Question 1.</h3>
+          <p>You have the world in the palm of your hand, what do you do?</p>
+          <select id="motive" name="q1">
+            <option value="Destroy">I'd destroy it</option>
+            <option value="Dominate">I'd rule with an iron fist</option>
+          </select>
+          <h3>Question 2.</h3>
+          <p>You have your nemesis at your mercy, what form does your victory take?</p>
+          <select id="victory" name="q2">
+            <option value="Convert">I'd convert them to my righteous cause.</option>
+            <option value="Kill">I would snuff out their pathetic existence.</option>
+            <option value="Torture">A victim always looks better without fingernails.</option>
+            <option value="Mercy">Mercy best becomes a victor.</option>
+          </select>
+          <h3>Question 3.</h3>
+          <p>Every good villain cultivates a distinctive personal style. What is yours?</p>
+          <select id="costume" name="q3">
+            <option value="Body">My magnificent flesh requires no ornament.</option>
+            <option value="Helmet">My helmet protects me from peril.</option>
+            <option value="Cape">A billowing cape is traditional.</option>
+            <option value="Undies">A real villain is not afraid to wear undies as outerwear!</option>
+          </select>
+          <h3>Question 3.</h3>
+          <p>What is the nature of your evil prowess?</p>
+          <select id="costume" name="q3">
+            <option value="physical">I was born this way.</option>
+            <option value="supernatural">My powers are beyond your puny ability to comprehend.</option>
+            <option value="tech">My weapons are the envy of the known world.</option>
+          </select>
 
+        </form>
+      </div>
+    </div>
   </body>
 </html>
