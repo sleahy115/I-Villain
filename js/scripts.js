@@ -30,7 +30,7 @@ var sauron = new Villain('Sauron', 'img/the-eye-of-sauron.jpg', 5, 1, 5, 'domina
 var terminator = new Villain('Terminator', 'img/terminator.jpg', 5, 4, 1, 'dominate', 'kill', 'body', 'mechanical', 'rocky-road');
 var gru = new Villain('Gru', 'img/Gru.jpg', 2, 2, 5, 'dominate', 'convert', 'black', 'mechanical', 'chocolate');
 var goblinKing = new Villain('Goblin King', 'img/goblin-king.jpg', 3, 3, 4, 'dominate', 'convert', 'cape', 'suernatural', 'pistachio');
-var khan = new Villain('Khan', 'img/khan.jpeg', 'merciful', 'convert', 4, 4, 4, 'body', 'physical', 'strawberry-sorbet');
+var khan = new Villain('Khan', 'img/khan.jpeg', 4, 4, 4, 'merciful', 'convert', 'body', 'physical', 'strawberry-sorbet');
 var loki = new Villain('Loki', 'img/loki.png', 2, 3, 5, 'chaos', 'kill', 'helmet', 'supernatural', 'cherry-garcia');
 
 var hermione = new Hero('Hermione', 'img/hermione.jpg', 2, 4, 5);
@@ -57,5 +57,5 @@ Villain.prototype.villainProfile = function() {
   profile += "<li>Wardrobe: " + this.costume + "</li>";
   profile += "<li>I have " + this.powers + " powers!!!</li>";
   profile += "<li>I like to reward my self with " + this.iceCream + " ice cream after a day of EVIL...</li>";
-  $("body").append(profile);
+  $(".villain-profile").append(profile);
 }
