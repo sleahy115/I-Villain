@@ -63,3 +63,13 @@ margin-top 25px;
   margin-top: 25px;
   margin-left: 20px;
 }
+#stage-three {
+  display: none;
+}
+/*.castle{
+  float: left;
+  transform: scaleX(-1);
+  background: linear-gradient(to bottom right, black 25%, #ff3300 75%);*/
+
+
+}
