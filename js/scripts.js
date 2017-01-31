@@ -1,4 +1,5 @@
 // Villain constructor
+
 function Villain(name, img, strength, speed, wits, motive, victory, costume, powers, iceCream) {
   this.villainName = name;
   this.img = img;
@@ -25,6 +26,7 @@ function Hero(name, img, strength, speed, wits) {
 //   this.villain = villain;
 //   this.hero = hero;
 // }
+
 
 var darthVader = new Villain('Darth Vader', 'img/darth-vader.jpg', 4, 2, 3, 'dominate', 'convert', 'helmet', 'supernatural', 'lactose-intolerance');
 var alienQueen = new Villain('Alien Queen', 'img/alien.jpg', 5, 4, 1, 'dominate', 'kill', 'body', 'physical', 'strawberry');
@@ -79,3 +81,29 @@ Villain.prototype.villainProfile = function() {
 //   battle += "<h2>" + this.heroName + "</h2>";
 //   $(".display-hero").append(battle);
 // }
+
+// $(function(){
+//   $("form#villain-questions").submit(function(event){
+//     event.preventDefault();
+//   var motiveInput = $("input#motive").val();
+//   var victoryInput = $("input#victory").val();
+//   var costumeInput = $("input#costume").val();
+//   var powersInput = $("input#powers").val();
+//   var iceCreamInput = $("input#iceCream").val();
+//
+//
+//   var answersArray = [];
+//   var tendencyArray = [];
+//   answersArray.push(motiveInput, victoryInput, costumeInput, powersInput, iceCreamInput);
+//   for(var i = 0; i < answersArray.length; i ++){
+//     for (var j = 0;  j < "villainsArray.length", j++)
+//     if (answersArray[i] === "villainsArray[j]."){
+//       tendencyArrah.push(villainsArray[j].villainName)
+//     }
+//   }
+//
+// function villainsArray =
+//
+//   });
+// });
+

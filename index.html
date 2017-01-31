@@ -6,61 +6,75 @@
     <link href="css/styles.css" type="text/css" rel="stylesheet">
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/scripts.js"></script>
-    <title>i-villain</title>
+    <link href="https://fonts.googleapis.com/css?family=Barrio|Shadows+Into+Light" rel="stylesheet">    <title>i-villain</title>
   </head>
   <body>
     <div class="container">
-      <div class="jumbotron">
+      <div class="header">
         <h1>I Villain!</h1>
+        <h2>Lets figure out which villain you should play:</h2>
       </div>
-      <h2>Lets figure out which villain you should play:</h2>
-      <div class="form-group">
-        <form class="form-group">
-          <h3>Question 1.</h3>
-          <p>You have the world in the palm of your hand, what do you do?</p>
-          <select id="motive" name="q1">
-            <option value="destroy">I'd destroy it</option>
-            <option value="dominate">I'd rule with an iron fist</option>
-          </select>
-          <h3>Question 2.</h3>
-          <p>You have your nemesis at your mercy, what form does your victory take?</p>
-          <select id="victory" name="q2">
-            <option value="convert">I'd convert them to my righteous cause.</option>
-            <option value="kill">I would snuff out their pathetic existence.</option>
-            <option value="torture">A victim always looks better without fingernails.</option>
-            <option value="mercy">Mercy best becomes a victor.</option>
-          </select>
-          <h3>Question 3.</h3>
-          <p>Every good villain cultivates a distinctive personal style. What is yours?</p>
-          <select id="costume" name="q3">
-            <option value="body">My magnificent flesh requires no ornament.</option>
-            <option value="helmet">My helmet protects me from peril.</option>
-            <option value="cape">A billowing cape is traditional.</option>
-            <option value="undies">A real villain is not afraid to wear undies as outerwear!</option>
-            <option value="black">Black never goes out of style.></option>
-          </select>
-          <h3>Question 4.</h3>
-          <p>What is the nature of your evil prowess?</p>
-          <select id="costume" name="q3">
-            <option value="physical">I was born this way.</option>
-            <option value="supernatural">My powers are beyond your puny ability to comprehend.</option>
-            <option value="mechanical">My weapons are the envy of the known world.</option>
-          </select>
-          <h3>Question 5.</h3>
-          <p>What is your favorite ice-cream?</p>
-          <select id="costume" name="q3">
-            <option value="rocky-road">Rocky road, studded with the skulls of my enemies.</option>
-            <option value="vanilla">Vanilla, cold and white like my heart.</option>
-            <option value="strawberry">Strawberry, red like the blood of my enemies</option>
-            <option value="lactose-intolerance">Milk products do not agree with my advanced digestion.</option>
-            <option value="bubble-gum">Bubble-gum, pink like your intestines.</option>
-            <option value="mint-chip">Mint Chip, poisonous green with black flakes, like my soul.</option>
-            <option value="chocolate">Chocolate, dark as the mud where I leave my enemies.</option>
-          </select>
-          <br>
-          <button type="submit" class="villian-submit">Which villian am I?</button>
-        </form>
+      <div class="background-container">
+        <div class="row">
+          <div class="col-md-6">
+          <div class="form-group">
+            <form class="form-group" id="villain-questions">
+              <h3>Question 1.</h3>
+              <p>You have the world in the palm of your hand, what do you do?</p>
+              <select id="motive" name="q1">
+                <option value="destroy">I'd destroy it</option>
+                <option value="dominate">I'd rule with an iron fist</option>
+              </select>
+              <h3>Question 2.</h3>
+              <p>You have your nemesis at your mercy, what form does your victory take?</p>
+              <select id="victory" name="q2">
+                <option value="convert">I'd convert them to my righteous cause.</option>
+                <option value="kill">I would snuff out their pathetic existence.</option>
+                <option value="torture">A victim always looks better without fingernails.</option>
+                <option value="mercy">Mercy best becomes a victor.</option>
+              </select>
+              <h3>Question 3.</h3>
+              <p>Every good villain cultivates a distinctive personal style. What is yours?</p>
+              <select id="costume" name="q3">
+                <option value="body">My magnificent flesh requires no ornament.</option>
+                <option value="helmet">My helmet protects me from peril.</option>
+                <option value="cape">A billowing cape is traditional.</option>
+                <option value="undies">A real villain is not afraid to wear undies as outerwear!</option>
+                <option value="black">Black never goes out of style.</option>
+              </select>
+              <h3>Question 4.</h3>
+              <p>What is the nature of your evil prowess?</p>
+              <select id="powers" name="q4">
+                <option value="physical">I was born this way.</option>
+                <option value="supernatural">My powers are beyond your puny ability to comprehend.</option>
+                <option value="mechanical">My weapons are the envy of the known world.</option>
+              </select>
+              <h3>Question 5.</h3>
+              <p>What is your favorite ice-cream?</p>
+              <select id="iceCream" name="q5">
+                <option value="rocky-road">Rocky road, studded with the skulls of my enemies.</option>
+                <option value="vanilla">Vanilla, cold and white like my heart.</option>
+                <option value="strawberry">Strawberry, red like the blood of my enemies</option>
+                <option value="lactose-intolerance">Milk products do not agree with my advanced digestion.</option>
+                <option value="bubble-gum">Bubble-gum, pink like your intestines.</option>
+                <option value="mint-chip">Mint Chip, poisonous green with black flakes, like my soul.</option>
+                <option value="chocolate">Chocolate, dark as the mud where I leave my enemies.</option>
+              </select>
+              <br>
+              <button type="submit" class="villain-submit">Which villain am I?</button>
+            </form>
+          </div>
+
+        </div>
+        <div class="col-md-6">
+          <img src="img/eyes-background.gif" alt="glowing eyes" class="eyes1">
+          <br><br><br><br>
+          <img src="img/eyes-background.gif" alt="glowing eyes" class="eyes2">
+          <br><br><br><br>
+          <img src="img/eyes-background.gif" alt="glowing eyes" class="eyes3">
+        </div>
       </div>
+    </div>
     </div>
   </body>
 </html>
