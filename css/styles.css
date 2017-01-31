@@ -57,13 +57,13 @@ select{
   list-style-type: none;
 }
 #stage-two img {
-  border: red;
-  border-width: 50px;
-  border-style: inset;
-  -webkit-border-image;
-    -webkit-gradient(linear, 0 0, 0 100%, from(black), to(rgba(0, 0, 0, 0))) 1 100%;
+  border-radius: 25px;
 }
 
+.meet-foe {
+  display: none;
+  background-color: #ff3300;
+}
 #stage-three {
   display: none;
 }

@@ -135,7 +135,13 @@ $(function(){
   console.log([villainOutput]);
   $("#stage-one").hide();
   $("#stage-two").show();
+  $(".meet-foe").show();
+
   villainOutput.villainProfile();
 
+  });
+  $(".meet-foe").click(function() {
+    $("#stage-two").hide();
+    $("#stage-three").show();
   });
 });
