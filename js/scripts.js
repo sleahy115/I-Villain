@@ -21,6 +21,11 @@ function Hero(name, img, strength, speed, wits) {
   this.wits = wits;
 }
 
+// function Battle(villain, hero) {
+//   this.villain = villain;
+//   this.hero = hero;
+// }
+
 var darthVader = new Villain('Darth Vader', 'img/darth-vader.jpg', 4, 2, 3, 'dominate', 'convert', 'helmet', 'supernatural', 'lactose-intolerance');
 var alienQueen = new Villain('Alien Queen', 'img/alien.jpg', 5, 4, 1, 'dominate', 'kill', 'body', 'physical', 'strawberry');
 var bellatrix = new Villain('Bellatrix LeStrange', 'img/bellatrix-the-strange.jpg', 3, 4, 3, 'chaos', 'torture', 'cape', 'supernatural', 'mint-chip');
@@ -44,6 +49,7 @@ var superMario = new Hero('Super Mario', 'img/Super-Mario.jpg', 4, 4, 2);
 var docBrown = new Hero('Doc Brown', 'img/doc-brown.jpg', 2, 5, 5);
 var professorX = new Hero('Professor X', 'img/prof-x.jpg', 5, 1, 5);
 
+var newBattle = new Battle(darthVader, hermione);
 // User Logic
 Villain.prototype.villainProfile = function() {
   var profile = '';
@@ -59,3 +65,17 @@ Villain.prototype.villainProfile = function() {
   profile += "<li>I like to reward my self with " + this.iceCream + " ice cream after a day of EVIL...</li>";
   $(".villain-profile").append(profile);
 }
+
+// Villain.prototype.displayVillain = function() {
+//   var battle = '';
+//   battle += "<img src='" + this.villain.img + "' alt='image of '" + this.villainName + "'";
+//   battle += "<h2>" + this.villainName + "</h2>";
+//   $(".display-villain").append(battle);
+// }
+//
+// Hero.prototype.displayHero = function() {
+//   var battle = '';
+//   battle += "<img src='" + this.hero.img + "' alt='image of '" + this.heroName + "'";
+//   battle += "<h2>" + this.heroName + "</h2>";
+//   $(".display-hero").append(battle);
+// }
