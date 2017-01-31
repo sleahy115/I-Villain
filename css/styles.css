@@ -48,7 +48,6 @@ select{
   text-align: center;
   text-shadow: 2px 2px #ff3300;
 }
-
 #stage-two li{
   color: white;
   font-family: 'Shadows Into Light', cursive;
@@ -59,11 +58,13 @@ select{
 #stage-two img {
   border-radius: 25px;
 }
-
 .meet-foe {
   display: none;
   background-color: #ff3300;
 }
 #stage-three {
   display: none;
+}
+#stage-three .line {
+  border-width: medium;
 }
