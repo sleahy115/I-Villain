@@ -9,17 +9,28 @@
 <body>
   <div class="container">
     <h1>Fight!</h1>
-    <div class="display-villain">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="display-villain">
 
+        </div>
+      </div>
+      <div class="col-md-2">
+        <img src="img/vs.png" alt="image of vs" width="200px"/>
+
+      </div>
+      <div class="col-md-5">
+        <div class="display-hero">
+
+        </div>
+      </div>
     </div>
-    <img src="img/vs.png" alt="image of vs" />
+    <div class="row">
+      <h2>Choose your weapon...</h2>
+      <input type="radio" value="strength" />Strength
+      <input type="radio" value="speed" />Speed
+      <input type="radio" value="wits" />Wit
+      <button type='button' id='fight-button'>Battle!</button>
+    </div>
   </div>
-  <div class="display-hero">
-
-  </div>
-  <h2>Choose your weapon...</h2>
-  <input type="radio" value="strength" />Strength
-  <input type="radio" value="speed" />Speed
-  <input type="radio" value="wits" />Wit
-  <button type='button' id='fight-button'>Battle!</button>
 </body>
