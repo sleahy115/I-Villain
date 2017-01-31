@@ -22,6 +22,7 @@ function Hero(name, img, strength, speed, wits) {
 }
 
 var answersArray = [];
+var villainOutput;
 
 var tendencyTest = function(){
   var highTendency = 0;
@@ -86,6 +87,9 @@ var superMario = new Hero('Super Mario', 'img/Super-Mario.jpg', 4, 4, 2);
 var docBrown = new Hero('Doc Brown', 'img/doc-brown.jpg', 2, 5, 5);
 var professorX = new Hero('Professor X', 'img/prof-x.jpg', 5, 1, 5);
 
+var heroArray = [];
+
+heroArray.push(hermione, mrIncredible, glenda, batman, daenerys, roadRunner, dudleyDoRight, superMario, docBrown, professorX);
 
 // User Logic
 Villain.prototype.villainProfile = function() {
@@ -122,6 +126,41 @@ Hero.prototype.heroDisplay = function() {
   $(".display-hero").append(profile);
 }
 
+heroFinder = function(testType){
+  var finderRNG = Math.ceil(Math.random() * 10);
+  console.log(finderRNG);
+    var hero = heroArray[finderRNG];
+    console.log(hero.heroName + " " + hero.speed);
+    console.log("villainOutput" + villainOutput);
+    var villain = villainOutput;
+    console.log(villain.villainName + " " + villain.speed);
+    if (testType === "strength"){
+        if (hero.strength > villain.strength){
+          console.log("hero wins based on strength");
+        } else if (hero.strength === villain.strength){
+          console.log("a tie");
+        } else {
+          console.log("villain wins based on strength");
+        };
+    } else if (testType === "wits"){
+        if (hero.wits > villain.wits){
+          console.log("hero wins based on wits");
+        } else if (hero.wits === villain.wits){
+          console.log("a tie");
+        } else {
+          console.log("villain wins based on wits");
+        };
+    } else if (testType === "speed"){
+        if (hero.speed > villain.speed){
+          console.log("hero wins based on speed");
+        } else if (hero.speed === villain.speed){
+          console.log("a tie");
+        } else {
+          console.log("villain wins based on speed");
+        };
+    };
+};
+
 $(function(){
   $("form#villain-questions").submit(function(event){
     event.preventDefault();
@@ -131,16 +170,23 @@ $(function(){
   var powersInput = $("#powers").val();
   var iceCreamInput = $("#iceCream").val();
   answersArray.push(motiveInput, victoryInput, costumeInput, powersInput, iceCreamInput);
-  var villainOutput = tendencyTest();
+  villainOutput = tendencyTest();
   console.log([villainOutput]);
   $("#stage-one").hide();
   $("#stage-two").show();
   villainOutput.villainProfile();
 
   });
+  $("#battle-button").click(function(event){
+    $("#stage-two").hide();
+    $("#stage-three").show();
+
+  })
+
+    $("#fight-button").click(function(event){
+      var testInput = $("input:radio[name=skillTest]:checked").val();
+      console.log(testInput);
+      heroFinder(testInput);
+
+    });
 });
-
-
-
-
-
