@@ -23,6 +23,7 @@ function Hero(name, img, strength, speed, wits) {
 
 var answersArray = [];
 var villainOutput;
+var hero;
 
 var tendencyTest = function(){
   var highTendency = 0;
@@ -127,8 +128,8 @@ Hero.prototype.heroDisplay = function() {
 }
 
 heroFinder = function(){
-  var finderRNG = Math.ceil(Math.random() * 10);
-    var hero = heroArray[finderRNG];
+  var finderRNG = Math.floor(Math.random() * 10);
+    hero = heroArray[finderRNG];
     hero.heroDisplay();
     var villain = villainOutput;
     $(".display-villain").empty();
@@ -136,6 +137,7 @@ heroFinder = function(){
   };
 
 battleFinder = function(testType){
+        var villain = villainOutput;
     console.log(villain.villainName + " " + villain.speed);
     if (testType === "strength"){
         if (hero.strength > villain.strength){
@@ -192,6 +194,6 @@ $(function(){
     $("#fight-button").click(function(event){
       var testInput = $("input:radio[name=skillTest]:checked").val();
       console.log(testInput);
-
+      battleFinder(testInput);
     });
 });
