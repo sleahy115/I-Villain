@@ -90,16 +90,16 @@ var professorX = new Hero('Professor X', 'img/prof-x.jpg', 5, 1, 5);
 // User Logic
 Villain.prototype.villainProfile = function() {
   var profile = '';
-  profile += "<img src='" + this.img + "' alt='image of '" + this.villainName + "'";
-  profile += "<h1>";
+  profile += '<h1 id="heading">';
   profile += this.villainName;
   profile += "</h1>";
+  profile += "<img src='" + this.img + "' alt='image of '" + this.villainName + "'";
   profile += "<ul>";
-  profile += "<li>I like to: " + this.motive + "</li>";
+  profile += "<li >I like to: " + this.motive + "</li>";
   profile += "<li>In my free time I enjoy: " + this.victory + "</li>";
   profile += "<li>Wardrobe: " + this.costume + "</li>";
   profile += "<li>I have " + this.powers + " powers!!!</li>";
-  profile += "<li>I like to reward my self with " + this.iceCream + " ice cream after a day of EVIL...</li>";
+  profile += "<li>I like to reward my self with " + this.iceCream + " ice cream after a day of EVIL...</li></ul>";
   $(".villain-profile").append(profile);
 }
 
@@ -139,8 +139,3 @@ $(function(){
 
   });
 });
-
-
-
-
-

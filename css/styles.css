@@ -1,75 +1,69 @@
 body {
   background-color: black;
 }
-
 .background-container {
   color: white;
   font-family: 'Shadows Into Light', cursive;
   font-size: 30px;
-  text-shadow: 2px 2px black;
-  /*background-color: black;*/
-  /*-webkit-mask-image:-webkit-gradient(linear, right bottom, left top, from(rgba(0,0,0,0)), to(rgba(0,0,0,1)))*/
-
+  text-shadow: 2px 2px #ff3300;
+  background-image: url("../img/villain-pub2.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 25px;
 }
 .background-container img {
-  border-color: #004080;
-  border-style: outset;
-  border: 20px;
-
-
+  opacity: 0.7;
 }
-
 .header {
   color: white;
   font-family: 'Barrio', cursive;
   font-size: 25px;
   text-align: center;
   text-shadow: 2px 2px #ff3300;
+  background-image: url("../img/eyes-background.gif");
+  height: 150px;
 }
-
-.villain-submit {
+.header img {
+  float: left;
+}
+  .villain-submit {
   margin-top: 10px;
   background-color: #ff3300;
-  opacity: 0.7;
   margin-top: 35px;
   text-shadow: 2px 2px #ff3300;
 }
-
 select{
   background-color: #ff3300;
   text-shadow: 2px 2px black;
-  opacity: 0.7;
   -webkit-appearance: none;
 }
+#stage-two {
+  color: white;
+  text-align: center;
+}
+#stage-two #heading {
+  color: white;
+  font-family: 'Barrio', cursive;
+  font-size: 45px;
+  text-align: center;
+  text-shadow: 2px 2px #ff3300;
+}
 
-option convert{
-  background-color: #ff3300;
-  text-shadow: 2px 2px black;
-  opacity: 0.7;
-  -webkit-appearance: none;
+#stage-two li{
+  color: white;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 30px;
+  text-shadow: 2px 2px #ff3300;
+  list-style-type: none;
 }
-.eyes1{
-/*position: fixed;
-top: 80%*/
-margin-top 25px;
+#stage-two img {
+  border: red;
+  border-width: 50px;
+  border-style: inset;
+  -webkit-border-image;
+    -webkit-gradient(linear, 0 0, 0 100%, from(black), to(rgba(0, 0, 0, 0))) 1 100%;
 }
 
-.eyes2{
-  transform: rotate(45deg);
-  margin: 25px;
-}
-.eyes3{
-  transform: rotate(315deg);
-  margin-top: 25px;
-  margin-left: 20px;
-}
 #stage-three {
   display: none;
-}
-/*.castle{
-  float: left;
-  transform: scaleX(-1);
-  background: linear-gradient(to bottom right, black 25%, #ff3300 75%);*/
-
-
 }
