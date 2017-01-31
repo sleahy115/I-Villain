@@ -21,18 +21,59 @@ function Hero(name, img, strength, speed, wits) {
   this.wits = wits;
 }
 
+var answersArray = [];
+
+var tendencyTest = function(){
+  var highTendency = 0;
+  var villainTendency = "";
+
+  for (var i = 0; i < villainsArray.length; i++){
+    var tempTendency = 0;
+    if (answersArray[0] === villainsArray[i].motive){
+      tempTendency ++
+    };
+    if (answersArray[1] === villainsArray[i].victory){
+      tempTendency ++
+    };
+    if (answersArray[2] === villainsArray[i].costume){
+      tempTendency ++
+    };
+    if (answersArray[3] === villainsArray[i].powers){
+      tempTendency ++
+    };
+    if (answersArray[4] === villainsArray[i].iceCream){
+      tempTendency ++
+    };
+    if (tempTendency > highTendency){
+      villainTendency = villainsArray[i].villainName;
+      highTendency = tempTendency;
+    };
+  };
+  for(var j = 0; j<villainsArray.length; j++){
+    if (villainTendency === villainsArray[j].villainName){
+      return villainsArray[j];
+    };
+  };
+};
+
+
+
+
 
 var darthVader = new Villain('Darth Vader', 'img/darth-vader.jpg', 4, 2, 3, 'dominate', 'convert', 'helmet', 'supernatural', 'lactose-intolerance');
 var alienQueen = new Villain('Alien Queen', 'img/alien.jpg', 5, 4, 1, 'dominate', 'kill', 'body', 'physical', 'strawberry');
 var bellatrix = new Villain('Bellatrix LeStrange', 'img/bellatrix-the-strange.jpg', 3, 4, 3, 'chaos', 'torture', 'cape', 'supernatural', 'mint-chip');
 var whiteWitch = new Villain('White Witch', 'img/whitewitch.jpg', 4, 2, 4, 'dominate', 'kill', 'cape', 'supernatural', 'vanilla');
 var skeletor = new Villain('Skeletor', 'img/skelator.jpg', 4, 2, 1, 'dominate', 'torture', 'underwear', 'supernatural', 'bubble-gum');
-var sauron = new Villain('Sauron', 'img/the-eye-of-sauron.jpg', 5, 1, 5, 'dominate', 'convert', 'body', 'supernatural', 'chunky-monkey');
+var sauron = new Villain('Sauron', 'img/the-eye-of-sauron.jpg', 5, 1, 5, 'destroy', 'convert', 'body', 'supernatural', 'chunky-monkey');
 var terminator = new Villain('Terminator', 'img/terminator.jpg', 5, 4, 1, 'dominate', 'kill', 'body', 'mechanical', 'rocky-road');
 var gru = new Villain('Gru', 'img/Gru.jpg', 2, 2, 5, 'dominate', 'convert', 'black', 'mechanical', 'chocolate');
 var goblinKing = new Villain('Goblin King', 'img/goblin-king.jpg', 3, 3, 4, 'dominate', 'convert', 'cape', 'suernatural', 'pistachio');
-var khan = new Villain('Khan', 'img/khan.jpeg', 4, 4, 4, 'merciful', 'convert', 'body', 'physical', 'strawberry-sorbet');
-var loki = new Villain('Loki', 'img/loki.png', 2, 3, 5, 'chaos', 'kill', 'helmet', 'supernatural', 'cherry-garcia');
+var khan = new Villain('Khan', 'img/khan.jpeg', 4, 4, 4, 'destroy', 'convert', 'body', 'physical', 'strawberry-sorbet');
+var loki = new Villain('Loki', 'img/loki.png', 2, 3, 5, 'destroy', 'kill', 'helmet', 'supernatural', 'cherry-garcia');
+
+var villainsArray = [];
+villainsArray.push(darthVader, alienQueen, bellatrix, whiteWitch, skeletor, sauron, terminator, gru, goblinKing, khan, loki)
 
 var hermione = new Hero('Hermione', 'img/hermione.jpg', 2, 4, 5);
 var mrIncredible = new Hero('Mr. Incredible', 'img/mr-incredible.jpg', 5, 4, 2);
@@ -62,6 +103,7 @@ Villain.prototype.villainProfile = function() {
   $(".villain-profile").append(profile);
 }
 
+
 Villain.prototype.villainDisplay = function() {
   var profile = '';
   profile += "<img src='" + this.img + "' alt='image of '" + this.villainName + "'";
@@ -80,32 +122,25 @@ Hero.prototype.heroDisplay = function() {
   $(".display-hero").append(profile);
 }
 
+$(function(){
+  $("form#villain-questions").submit(function(event){
+    event.preventDefault();
+  var motiveInput = $("#motive").val();
+  var victoryInput = $("#victory").val();
+  var costumeInput = $("#costume").val();
+  var powersInput = $("#powers").val();
+  var iceCreamInput = $("#iceCream").val();
+  answersArray.push(motiveInput, victoryInput, costumeInput, powersInput, iceCreamInput);
+  var villainOutput = tendencyTest();
+  console.log([villainOutput]);
+  $("#stage-one").hide();
+  $("#stage-two").show();
+  villainOutput.villainProfile();
+
+  });
+});
 
 
 
 
 
-// $(function(){
-//   $("form#villain-questions").submit(function(event){
-//     event.preventDefault();
-//   var motiveInput = $("input#motive").val();
-//   var victoryInput = $("input#victory").val();
-//   var costumeInput = $("input#costume").val();
-//   var powersInput = $("input#powers").val();
-//   var iceCreamInput = $("input#iceCream").val();
-//
-//
-//   var answersArray = [];
-//   var tendencyArray = [];
-//   answersArray.push(motiveInput, victoryInput, costumeInput, powersInput, iceCreamInput);
-//   for(var i = 0; i < answersArray.length; i ++){
-//     for (var j = 0;  j < "villainsArray.length", j++)
-//     if (answersArray[i] === "villainsArray[j]."){
-//       tendencyArrah.push(villainsArray[j].villainName)
-//     }
-//   }
-//
-// function villainsArray =
-//
-//   });
-// });
