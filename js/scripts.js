@@ -1,4 +1,5 @@
 // Villain constructor
+
 function Villain(name, img, strength, speed, wits, motive, victory, costume, powers, iceCream) {
   this.villainName = name;
   this.img = img;
@@ -43,3 +44,30 @@ var dudleyDoRight = new Hero('Dudley Do Right', '../img/dudley-do-right.jpg', 3,
 var superMario = new Hero('Super Mario', '../img/Super-Mario.jpg' 4, 4, 2);
 var docBrown = new Hero('Doc Brown', '../img/doc-brown.jpg', 2, 5, 5);
 var professorX = new Hero('Professor X', '../img/prof-x.jpg', 5, 1, 5);
+
+
+
+// $(function(){
+//   $("form#villain-questions").submit(function(event){
+//     event.preventDefault();
+//   var motiveInput = $("input#motive").val();
+//   var victoryInput = $("input#victory").val();
+//   var costumeInput = $("input#costume").val();
+//   var powersInput = $("input#powers").val();
+//   var iceCreamInput = $("input#iceCream").val();
+//
+//
+//   var answersArray = [];
+//   var tendencyArray = [];
+//   answersArray.push(motiveInput, victoryInput, costumeInput, powersInput, iceCreamInput);
+//   for(var i = 0; i < answersArray.length; i ++){
+//     for (var j = 0;  j < "villainsArray.length", j++)
+//     if (answersArray[i] === "villainsArray[j]."){
+//       tendencyArrah.push(villainsArray[j].villainName)
+//     }
+//   }
+//
+// function villainsArray =
+//
+//   });
+// });
