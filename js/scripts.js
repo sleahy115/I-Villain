@@ -126,20 +126,26 @@ Hero.prototype.heroDisplay = function() {
   $(".display-hero").append(profile);
 }
 
-heroFinder = function(testType){
+heroFinder = function(){
   var finderRNG = Math.ceil(Math.random() * 10);
-  console.log(finderRNG);
     var hero = heroArray[finderRNG];
-    console.log(hero.heroName + " " + hero.speed);
-    console.log("villainOutput" + villainOutput);
+    hero.heroDisplay();
     var villain = villainOutput;
+    $(".display-villain").empty();
+    villain.villainDisplay();
+  };
+
+battleFinder = function(testType){
     console.log(villain.villainName + " " + villain.speed);
     if (testType === "strength"){
         if (hero.strength > villain.strength){
+
           console.log("hero wins based on strength");
         } else if (hero.strength === villain.strength){
           console.log("a tie");
+          alert("a tie");
         } else {
+          villain.villainDisplay();
           console.log("villain wins based on strength");
         };
     } else if (testType === "wits"){
@@ -180,13 +186,12 @@ $(function(){
   $("#battle-button").click(function(event){
     $("#stage-two").hide();
     $("#stage-three").show();
-
-  })
+    heroFinder();
+  });
 
     $("#fight-button").click(function(event){
       var testInput = $("input:radio[name=skillTest]:checked").val();
       console.log(testInput);
-      heroFinder(testInput);
 
     });
 });
