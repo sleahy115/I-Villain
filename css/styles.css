@@ -41,7 +41,7 @@ select{
   color: white;
   text-align: center;
 }
-#stage-two #heading {
+#stage-two #heading, .font-design {
   color: white;
   font-family: 'Barrio', cursive;
   font-size: 45px;
@@ -92,4 +92,24 @@ select{
 .hero-border {
   box-shadow: 3px 4px 5px 6px green;
   border-radius: 25px;
+}
+#stage-three {
+  text-align: center;
+}
+.vs {
+  vertical-align: middle;
+  padding-top: 120px;
+}
+#vs {
+  padding: 30px;
+}
+.battle-button{
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  border: 2px solid white;
+  max-width: 200px;
+  max-height: 100px;
+  padding: 10px;
+  font-family: 'Permanent Marker', cursive;
 }
