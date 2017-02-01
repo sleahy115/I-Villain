@@ -85,3 +85,17 @@ select{
   display: block;
   margin: auto;
 }
+#stage-five img {
+  height: 100px;
+  width:100px;
+}
+
+#pick-opponent{
+  display: none;
+}
+#pick-again{
+  display: none;
+}
+#new-weapon {
+  display: none;
+}
