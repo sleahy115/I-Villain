@@ -93,3 +93,6 @@ select{
 #pick-opponent{
   display: none;
 }
+#pick-again{
+  display: none;
+}

@@ -130,6 +130,7 @@ Villain.prototype.villainVictory = function(input) {
   profile += "<br><h2>";
   profile += "In a battle of " + input + ", you have crushed your foe.";
   profile += "</h2>";
+  $(".victory-display").empty();
   $(".victory-display").append(profile);
 }
 
@@ -140,6 +141,7 @@ Hero.prototype.heroVictory = function(input) {
   profile += "<br><h2>";
   profile += "In a battle of " + input + ", you have been crushed!";
   profile += "</h2>";
+  $(".victory-display").empty();
   $(".victory-display").append(profile);
 }
 
@@ -240,10 +242,13 @@ $(function(){
     $("#stage-three").hide();
     $("#stage-four").show();
     battleFinder(testInput);
+    $("#pick-opponent").show();
+    $("#pick-again").show();
 
   });
 
   $("#pick-opponent").click(function(){
+    $("#stage-five").show();
     chooseOpponent();
     for (var i = 0; i < heroArray.length; i++) {
       var buttonid = "#click-opponent" + [i];
@@ -251,11 +256,14 @@ $(function(){
       $(buttonid).click(function(){
         console.log("the value of what you're clicking is " + $(this).val())
         var opponent = $(this).val();
+        $("#stage-four").hide();
         $("#stage-five").hide();
         $("#stage-three").show();
         heroFinder(opponent);
       });
     };
   });
-
+  $("#pick-again").click(function() {
+    location.reload();
+  });
 });
