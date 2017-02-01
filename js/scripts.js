@@ -129,19 +129,21 @@ Hero.prototype.heroDisplay = function() {
 
 Villain.prototype.villainVictory = function(input) {
   var profile = '';
+  profile += "<h1>Victory Is Yours, " + this.villainName + "!</h2>";
   profile += "<img src='" + this.img + "' alt='image of '" + this.villainName + "'";
-  profile += "<h1>";
-  profile += this.villainName;
-  profile += "</h1>";
+  profile += "<br><h2>";
+  profile += "In a battle of " + input + ", you have crushed your foe.";
+  profile += "</h2>";
   $(".victory-display").append(profile);
 }
 
 Hero.prototype.heroVictory = function(input) {
   var profile = '';
+  profile += "<h1>A painful defeat by " + this.heroName + ", you pathetic scum!</h2>";
   profile += "<img src='" + this.img + "' alt='image of '" + this.heroName + "'";
-  profile += "<h1>";
-  profile += this.heroName;
-  profile += "</h1>";
+  profile += "<br><h2>";
+  profile += "In a battle of " + input + ", you have been crushed!";
+  profile += "</h2>";
   $(".victory-display").append(profile);
 }
 
@@ -183,6 +185,7 @@ heroFinder = function(){
             hero.heroVictory(testType);
             console.log("hero wins based on speed");
           } else if (hero.speed === villain.speed){
+            alert("a tie!");
             console.log("a tie");
           } else {
             villain.villainVictory(testType);
