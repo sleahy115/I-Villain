@@ -58,7 +58,7 @@ select{
 #stage-two img {
   border-radius: 25px;
 }
-.meet-foe {
+#meet-foe {
   display: none;
   background-color: #ff3300;
 }
@@ -67,4 +67,8 @@ select{
 }
 #stage-three .line {
   border-width: medium;
+}
+#stage-three img {
+  height: 500px;
+  width: 500px;
 }
