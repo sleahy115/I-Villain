@@ -13,13 +13,17 @@ function Villain(name, img, strength, speed, wits, motive, victory, costume, pow
 }
 
 // Hero constructor
-function Hero(name, img, strength, speed, wits, motive) {
+function Hero(name, img, strength, speed, wits, motive, idol, subject, weapon, iceCream) {
     this.heroName = name;
     this.img = img;
     this.strength = strength;
     this.speed = speed;
     this.wits = wits;
     this.motive = motive;
+    this.idol = idol;
+    this.subject = subject;
+    this.weapon = weapon;
+    this.iceCream = iceCream;
 }
 
 //Global variables
@@ -44,8 +48,8 @@ var loki = new Villain('Loki', 'img/loki.png', 2, 3, 5, 'destroy', 'kill', 'helm
 var villainsArray = [];
 villainsArray.push(darthVader, alienQueen, bellatrix, whiteWitch, skeletor, sauron, terminator, gru, goblinKing, khan, loki)
 
-var hermione = new Hero('Hermione', 'img/hermione.jpg', 2, 4, 5, 'freedom');
-var mrIncredible = new Hero('Mr. Incredible', 'img/mr-incredible.jpg', 5, 4, 2, 'justice');
+var hermione = new Hero('Hermione', 'img/hermione.jpg', 2, 4, 5, 'freedom','mlk', 'languages', 'wand');
+var mrIncredible = new Hero('Mr. Incredible', 'img/mr-incredible.jpg', 5, 4, 2, 'justice', 'superman', 'pe', 'strength' );
 var glenda = new Hero('Glenda the Good Witch', 'img/glinda-the-good-witch.jpg', 2, 4, 4, 'freedom');
 var batman = new Hero('Batman', 'img/batman.jpg', 4, 3, 4, 'justice');
 var daenerys = new Hero('Daenerys', 'img/daenerys.jpg', 2, 2, 4, 'justice');
@@ -107,7 +111,6 @@ Villain.prototype.villainProfile = function() {
     $(".villain-profile").append(profile);
 }
 
-
 Villain.prototype.villainDisplay = function() {
     var profile = '';
     profile += "<img src='" + this.img + "' class='animated slideInLeft villain-border' alt='image of '" + this.villainName + "'";
@@ -151,8 +154,9 @@ Hero.prototype.heroVictory = function(input) {
 chooseOpponent = function() {
     for (var i = 0; i < heroArray.length; i++) {
         var profile = '';
-        profile += "<img src='" + heroArray[i].img + "' alt='image of '" + heroArray[i].heroName + "'>";
-        profile += "<button class='click-opponent' id='click-opponent" + [i] + "'' type='button' value='" + heroArray[i].heroName + "'>" + heroArray[i].heroName + "</button>";
+        profile += "<input type = 'image' value = '" + heroArray[i].heroName + "' id = 'click-opponent" + [i] + "' src='" + heroArray[i].img + "' alt='image of '" + heroArray[i].heroName + "'>";
+        // profile += "<input"
+        // profile += "<button class='click-opponent' id='click-opponent" + [i] + "'' type='button' value='" + heroArray[i].heroName + "'>" + heroArray[i].heroName + "</button>";
         var placementString = ".choose-opponent" + [i];
         $(placementString).empty();
         $(placementString).append(profile);
