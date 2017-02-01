@@ -81,6 +81,7 @@ select{
   display: block;
   margin: auto;
 }
+
 .icon-img img {
   max-width: 70px;
   max-height: 70px;
@@ -114,4 +115,19 @@ select{
   max-height: 100px;
   padding: 10px;
   font-family: 'Permanent Marker', cursive;
+
+#stage-five img {
+  height: 100px;
+  width:100px;
+}
+
+#pick-opponent{
+  display: none;
+}
+#pick-again{
+  display: none;
+}
+#new-weapon {
+  display: none;
+
 }

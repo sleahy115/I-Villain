@@ -24,6 +24,7 @@ function Hero(name, img, strength, speed, wits) {
 var answersArray = [];
 var villainOutput;
 var hero;
+var opponent;
 
 var tendencyTest = function(){
   var highTendency = 0;
@@ -57,10 +58,6 @@ var tendencyTest = function(){
     };
   };
 };
-
-
-
-
 
 var darthVader = new Villain('Darth Vader', 'img/darth-vader.jpg', 4, 2, 3, 'dominate', 'convert', 'helmet', 'supernatural', 'lactose-intolerance');
 var alienQueen = new Villain('Alien Queen', 'img/alien.jpg', 5, 4, 1, 'dominate', 'kill', 'body', 'physical', 'strawberry');
@@ -134,6 +131,7 @@ Villain.prototype.villainVictory = function(input) {
   profile += "<br><h2>";
   profile += "In a battle of " + input + ", you have crushed your foe.";
   profile += "</h2>";
+  $(".victory-display").empty();
   $(".victory-display").append(profile);
 }
 
@@ -144,52 +142,73 @@ Hero.prototype.heroVictory = function(input) {
   profile += "<br><h2>";
   profile += "In a battle of " + input + ", you have been crushed!";
   profile += "</h2>";
+  $(".victory-display").empty();
   $(".victory-display").append(profile);
 }
 
-heroFinder = function(){
-  var finderRNG = Math.floor(Math.random() * 10);
-    hero = heroArray[finderRNG];
+chooseOpponent = function() {
+  for (var i = 0; i<heroArray.length; i++) {
+    var profile = '';
+    profile += "<img src='" + heroArray[i].img + "' alt='image of '" + heroArray[i].heroName + "'>";
+    profile += "<button class='click-opponent' id='click-opponent" + [i] + "'' type='button' value='" + heroArray[i].heroName + "'>" + heroArray[i].heroName + "</button>";
+    var placementString = ".choose-opponent" + [i];
+    $(placementString).empty();
+    $(placementString).append(profile);
+  };
+};
+
+heroFinder = function(antagonist){
+  if (antagonist) {
+    console.log("antagonist is already set to " + antagonist)
+    for(var i= 0; i<heroArray.length; i++) {
+      if (antagonist === heroArray[i].heroName) {
+        hero = heroArray[i];
+      }
+    }
+  }
+  else {
+    console.log("opponent is not yet set.")
+    var finderRNG = Math.floor(Math.random() * 10);
+    hero = heroArray[finderRNG]};
+    $(".display-hero").empty();
     hero.heroDisplay();
     var villain = villainOutput;
     $(".display-villain").empty();
+    opponent = hero.heroName;
+    console.log(opponent);
     villain.villainDisplay();
   };
 
   battleFinder = function(testType){
           var villain = villainOutput;
-      console.log(villain.villainName + " " + villain.speed);
+          var heroRNG = Math.random();
+          var villainRNG = Math.random();
       if (testType === "strength"){
-          if (hero.strength > villain.strength){
+        var heroStrength = hero.strength + heroRNG;
+        var villainStrength = villain.strength + villainRNG;
+        console.log("heroSt = " + heroStrength + " villSt " + villainStrength);
+          if (heroStrength > villainStrength){
             hero.heroVictory(testType);
-            console.log("hero wins based on strength");
-          } else if (hero.strength === villain.strength){
-            console.log("a tie");
-            alert("a tie");
           } else {
             villain.villainVictory(testType);
-            console.log("villain wins based on strength");
           };
       } else if (testType === "wits"){
-          if (hero.wits > villain.wits){
+          var heroWits = hero.wits + heroRNG;
+          var villainWits = villain.wits + villainRNG;
+          console.log("herow = " + heroWits + " villw " + villainWits);
+          if (heroWits > villainWits){
             hero.heroVictory(testType);
-            console.log("hero wins based on wits");
-          } else if (hero.wits === villain.wits){
-            console.log("a tie");
           } else {
             villain.villainVictory(testType);
-            console.log("villain wins based on wits");
           };
       } else if (testType === "speed"){
-          if (hero.speed > villain.speed){
+        var heroSpeed = hero.speed + heroRNG;
+        var villainSpeed = villain.speed + villainRNG;
+
+          if (heroSpeed > villainSpeed){
             hero.heroVictory(testType);
-            console.log("hero wins based on speed");
-          } else if (hero.speed === villain.speed){
-            alert("a tie!");
-            console.log("a tie");
           } else {
             villain.villainVictory(testType);
-            console.log("villain wins based on speed");
           };
       };
   };
@@ -218,6 +237,7 @@ $(function(){
     $("#stage-two").hide();
     $("#stage-three").show();
     heroFinder();
+    console.log(opponent);
   });
 
   $("#fight-button").click(function(event){
@@ -226,5 +246,34 @@ $(function(){
     $("#stage-three").hide();
     $("#stage-four").show();
     battleFinder(testInput);
+    $("#pick-opponent").show();
+    $("#pick-again").show();
+    $("#new-weapon").show();
+  });
+
+  $("#pick-opponent").click(function(){
+    $("#stage-five").show();
+    chooseOpponent();
+    for (var i = 0; i < heroArray.length; i++) {
+      var buttonid = "#click-opponent" + [i];
+      console.log(buttonid);
+      $(buttonid).click(function(){
+        console.log("the value of what you're clicking is " + $(this).val())
+        opponent = $(this).val();
+        $("#stage-four").hide();
+        $("#stage-five").hide();
+        $("#stage-three").show();
+        heroFinder(opponent);
+      });
+    };
+  });
+  $("#pick-again").click(function() {
+    location.reload();
+  });
+  $("#new-weapon").click(function() {
+    $("#stage-three").show();
+    $("#stage-four").hide();
+    console.log(opponent);
+    heroFinder(opponent);
   });
 });
