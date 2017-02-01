@@ -127,6 +127,26 @@ Hero.prototype.heroDisplay = function() {
   $(".display-hero").append(profile);
 }
 
+Villain.prototype.villainVictory = function(input) {
+  var profile = '';
+  profile += "<h1>Victory Is Yours, " + this.villainName + "!</h2>";
+  profile += "<img src='" + this.img + "' alt='image of '" + this.villainName + "'";
+  profile += "<br><h2>";
+  profile += "In a battle of " + input + ", you have crushed your foe.";
+  profile += "</h2>";
+  $(".victory-display").append(profile);
+}
+
+Hero.prototype.heroVictory = function(input) {
+  var profile = '';
+  profile += "<h1>A painful defeat by " + this.heroName + ", you pathetic scum!</h2>";
+  profile += "<img src='" + this.img + "' alt='image of '" + this.heroName + "'";
+  profile += "<br><h2>";
+  profile += "In a battle of " + input + ", you have been crushed!";
+  profile += "</h2>";
+  $(".victory-display").append(profile);
+}
+
 heroFinder = function(){
   var finderRNG = Math.floor(Math.random() * 10);
     hero = heroArray[finderRNG];
@@ -136,38 +156,43 @@ heroFinder = function(){
     villain.villainDisplay();
   };
 
-battleFinder = function(testType){
-        var villain = villainOutput;
-    console.log(villain.villainName + " " + villain.speed);
-    if (testType === "strength"){
-        if (hero.strength > villain.strength){
-
-          console.log("hero wins based on strength");
-        } else if (hero.strength === villain.strength){
-          console.log("a tie");
-          alert("a tie");
-        } else {
-          villain.villainDisplay();
-          console.log("villain wins based on strength");
-        };
-    } else if (testType === "wits"){
-        if (hero.wits > villain.wits){
-          console.log("hero wins based on wits");
-        } else if (hero.wits === villain.wits){
-          console.log("a tie");
-        } else {
-          console.log("villain wins based on wits");
-        };
-    } else if (testType === "speed"){
-        if (hero.speed > villain.speed){
-          console.log("hero wins based on speed");
-        } else if (hero.speed === villain.speed){
-          console.log("a tie");
-        } else {
-          console.log("villain wins based on speed");
-        };
-    };
-};
+  battleFinder = function(testType){
+          var villain = villainOutput;
+      console.log(villain.villainName + " " + villain.speed);
+      if (testType === "strength"){
+          if (hero.strength > villain.strength){
+            hero.heroVictory(testType);
+            console.log("hero wins based on strength");
+          } else if (hero.strength === villain.strength){
+            console.log("a tie");
+            alert("a tie");
+          } else {
+            villain.villainVictory(testType);
+            console.log("villain wins based on strength");
+          };
+      } else if (testType === "wits"){
+          if (hero.wits > villain.wits){
+            hero.heroVictory(testType);
+            console.log("hero wins based on wits");
+          } else if (hero.wits === villain.wits){
+            console.log("a tie");
+          } else {
+            villain.villainVictory(testType);
+            console.log("villain wins based on wits");
+          };
+      } else if (testType === "speed"){
+          if (hero.speed > villain.speed){
+            hero.heroVictory(testType);
+            console.log("hero wins based on speed");
+          } else if (hero.speed === villain.speed){
+            alert("a tie!");
+            console.log("a tie");
+          } else {
+            villain.villainVictory(testType);
+            console.log("villain wins based on speed");
+          };
+      };
+  };
 
 $(function(){
   $("form#villain-questions").submit(function(event){
@@ -195,9 +220,11 @@ $(function(){
     heroFinder();
   });
 
-    $("#fight-button").click(function(event){
-      var testInput = $("input:radio[name=skillTest]:checked").val();
-      console.log(testInput);
-      battleFinder(testInput);
-    });
+  $("#fight-button").click(function(event){
+    var testInput = $("input:radio[name=skillTest]:checked").val();
+    console.log(testInput);
+    $("#stage-three").hide();
+    $("#stage-four").show();
+    battleFinder(testInput);
+  });
 });
