@@ -85,3 +85,7 @@ select{
   display: block;
   margin: auto;
 }
+#stage-five img {
+  height: 100px;
+  width:100px;
+}
