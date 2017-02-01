@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
-    <link href ="css/animate.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
-    <link href="css/styles.css" type="text/css" rel="stylesheet">
-    <script src="js/jquery-3.1.1.js"></script>
-    <script src="js/scripts.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Barrio|Shadows+Into+Light" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  <link href="css/styles.css" type="text/css" rel="stylesheet">
+  <script src="js/jquery-3.1.1.js"></script>
+  <script src="js/scripts.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Barrio|Shadows+Into+Light" rel="stylesheet">
 
-    <title>i-villain</title>
-  </head>
-  <body>
-    <div class="container" id="stage-one">
-      <div class="header">
-        <h1>I Villain!</h1>
-        <h2>Which villain are you?</h2>
-      </div>
-      <div class="background-container">
-        <div class="row">
-          <!-- <div class="col-md-6"> -->
+  <title>i-villain</title>
+</head>
+
+<body>
+  <div class="container" id="stage-one">
+    <div class="header">
+      <h1>I Villain!</h1>
+      <h2>Which villain are you?</h2>
+    </div>
+    <div class="background-container">
+      <div class="row">
+        <div class="col-md-6">
           <div class="form-group">
             <form class="form-group" id="villain-questions">
               <h3>Question 1.</h3>
@@ -68,120 +69,75 @@
               <button type="submit" class="villain-submit button-styling">Which villain am I?</button>
             </form>
           </div>
-
-
-
-        <!-- </div> -->
-        <!-- <div class="col-md-6"> -->
-          <!-- <img src="img/eyes-background.gif" alt="glowing eyes" class="eyes1">
-          <br><br><br><br>
-          <img src="img/eyes-background.gif" alt="glowing eyes" class="eyes2">
-          <br><br><br><br>
-          <img src="img/eyes-background.gif" alt="glowing eyes" class="eyes3"> -->
-        <!-- </div> -->
-      </div>
-    </div>
-    </div>
-    <div class="container" id="stage-two">
-      <div class="villain-profile">
-      </div>
-
-
-      <button type="button" id="meet-foe" name="button">Meet your nemisis</button>
-
-
-
-
-    </div>
-    <div class="container" id="stage-three">
-      <div class="container">
-        <img src="img/fight.png" class="fight">
-        <div class="row">
-          <div class="col-md-5">
-            <div class="display-villain"></div>
-          </div>
-          <div class="col-md-2 vs">
-            <img src="img/vs.png" id="vs" alt="image of vs" >
-          </div>
-          <div class="col-md-5">
-            <div class="display-hero"></div>
-          </div>
         </div>
-      <h2 class="font-design">Choose your weapon...</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="radio">
-            <label for="strength">
-              <input type="radio" value="strength" name="skillTest">
-              <div class="icon-img">
-                <img src="img/strength.jpg" alt="picture of weight lifter icon" />
-              </div>
-            </label>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="radio">
-            <label for="speed">
-              <input type="radio" value="speed" name="skillTest">
-              <div class="icon-img">
-                <img src="img/red-rocket.jpg" alt="picture of red rocket icon" />
-              </div>
-            </label>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="radio">
-            <label for="wit">
-              <input type="radio" value="wits" name="skillTest"><input type="radio" value="strength" name="skillTest">
-              <div class="icon-img">
-                <img src="img/red-brain.jpg" alt="picture of red brain icon" />
-              </div>
-            </label>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-
-      <div class="battle-button">
-        <h1>Battle!</h1>
-      </div>
-      <button type='button' id='fight-button'>Battle!</button>;
-      </div>
-    </div>
       </div>
     </div>
   </div>
-    <div class="container" id="stage-four">
-      <div class="victory-display" id="victory-display">
-
-      </div>
-      <button type="button" id="pick-opponent">Choose another Opponent</button>
-      <button type="button" id="pick-again">Play as a different villain</button>
-      <button type="button" id="new-weapon">try again with a different weapon</button>
+  <div class="container" id="stage-two">
+    <div class="villain-profile">
     </div>
-    <div class="container" id="stage-five">
-      <div class="choose-opponent1">
+    <button type="button" id="meet-foe" class="button-styling" name="button">Meet your nemesis</button>
+  </div>
+  <div class="container" id="stage-three">
+    <img src="img/fight.png" class="fight">
+    <div class="row">
+      <div class="col-md-5">
+        <div class="display-villain"></div>
       </div>
-      <div class="choose-opponent2">
+      <div class="col-md-2 vs">
+        <img src="img/vs.png" id="vs" alt="image of vs">
       </div>
-      <div class="choose-opponent3">
+      <div class="col-md-5">
+        <div class="display-hero"></div>
       </div>
-      <div class="choose-opponent4">
-      </div>
-      <div class="choose-opponent5">
-      </div>
-      <div class="choose-opponent6">
-      </div>
-      <div class="choose-opponent7">
-      </div>
-      <div class="choose-opponent8">
-      </div>
-      <div class="choose-opponent9">
-      </div>
-      <div class="choose-opponent10">
-      </div>
-
     </div>
-  </body>
+    <h2 class="font-design">Choose your weapon...</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <input type="image" id="strength" src="img/strength.jpg" value="strength" name="skillTest">
+      </div>
+    </div>
+    <div class="col-md-4">
+       <input type="image" id="speed" src="img/red-rocket.jpg" value="speed" name="skillTest">
+    </div>
+    <div class="col-md-4">
+      <input type="image" id="wits" value="wits" src="img/red-brain.jpg" name="skillTest">
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-md-12">
+         <button type='button' class="button-styling" id='fight-button'>Battle!</button>;
+      </div>
+     </div>
+  <div class="container" id="stage-four">
+    <div class="victory-display" id="victory-display">
+    </div>
+    <button type="button" class="button-styling" id="pick-opponent">Another Opponent</button>
+    <button type="button" class="button-styling" id="pick-again">Different Villain</button>
+    <button type="button" class="button-styling" id="new-weapon">Different Weapon</button>
+  </div>
+  <div class="container" id="stage-five">
+    <div class="choose-opponent1">
+    </div>
+    <div class="choose-opponent2">
+    </div>
+    <div class="choose-opponent3">
+    </div>
+    <div class="choose-opponent4">
+    </div>
+    <div class="choose-opponent5">
+    </div>
+    <div class="choose-opponent6">
+    </div>
+    <div class="choose-opponent7">
+    </div>
+    <div class="choose-opponent8">
+    </div>
+    <div class="choose-opponent9">
+    </div>
+    <div class="choose-opponent10">
+    </div>
+  </div>
+</body>
+
 </html>

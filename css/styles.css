@@ -134,7 +134,7 @@ select{
 #vs {
   padding: 30px;
 }
-.battle-button{
+.button-styling{
   background-color: red;
   color: white;
   border-radius: 50%;
@@ -144,7 +144,9 @@ select{
   padding: 10px;
   font-family: 'Permanent Marker', cursive;
   margin: 0 auto;
+  font-size: 25px;
 }
+
 #stage-five img {
   height: 100px;
   width:100px;
@@ -158,5 +160,12 @@ select{
 }
 #new-weapon {
   display: none;
+}
+#stage-three input {
+  height: 100px;
+  width: 100px;
+}
 
+#fight-button {
+  display: none;
 }
