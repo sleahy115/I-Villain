@@ -95,6 +95,8 @@ select{
 }
 #stage-three {
   text-align: center;
+  background-image: url('../img/vintage-boxing.jpg');
+  background-repeat: no-repeat;
 }
 .vs {
   vertical-align: middle;
