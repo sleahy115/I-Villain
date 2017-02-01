@@ -58,7 +58,7 @@ select{
 #stage-two img {
   border-radius: 25px;
 }
-.meet-foe {
+#meet-foe {
   display: none;
   background-color: #ff3300;
 }
@@ -67,4 +67,21 @@ select{
 }
 #stage-three .line {
   border-width: medium;
+}
+#stage-three img {
+  height: 500px;
+  width: 500px;
+
+}
+#stage-three #vs {
+  height: 190px;
+  width: 190px;
+  align-items: center;
+  margin-top: 50px;
+}
+#stage-three #fight{
+  background-color: black;
+  width: 50%;
+  display: block;
+  margin: auto;
 }

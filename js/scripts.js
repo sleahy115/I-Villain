@@ -98,7 +98,7 @@ Villain.prototype.villainProfile = function() {
   profile += '<h1 id="heading">';
   profile += this.villainName;
   profile += "</h1>";
-  profile += "<img src='" + this.img + "' alt='image of '" + this.villainName + "'";
+  profile += "<img src='" + this.img + "' class='animated rotateIn' alt='image of '" + this.villainName + "'" ;
   profile += "<ul>";
   profile += "<li >I like to: " + this.motive + "</li>";
   profile += "<li>In my free time I enjoy: " + this.victory + "</li>";
@@ -111,7 +111,7 @@ Villain.prototype.villainProfile = function() {
 
 Villain.prototype.villainDisplay = function() {
   var profile = '';
-  profile += "<img src='" + this.img + "' alt='image of '" + this.villainName + "'";
+  profile += "<img src='" + this.img + "' class='animated slideInLeft' alt='image of '" + this.villainName + "'";
   profile += "<h1>";
   profile += this.villainName;
   profile += "</h1>";
@@ -120,7 +120,7 @@ Villain.prototype.villainDisplay = function() {
 
 Hero.prototype.heroDisplay = function() {
   var profile = '';
-  profile += "<img src='" + this.img + "' alt='image of '" + this.heroName + "'";
+  profile += "<img src='" + this.img + "' class='animated slideInRight' alt='image of '" + this.heroName + "'";
   profile += "<h1>";
   profile += this.heroName;
   profile += "</h1>";
@@ -207,7 +207,8 @@ $(function(){
   console.log([villainOutput]);
   $("#stage-one").hide();
   $("#stage-two").show();
-  $(".meet-foe").show();
+  $("#meet-foe").show();
+
 
   villainOutput.villainProfile();
 
