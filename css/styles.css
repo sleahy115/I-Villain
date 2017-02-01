@@ -41,7 +41,7 @@ select{
   color: white;
   text-align: center;
 }
-#stage-two #heading {
+#stage-two #heading, .font-design {
   color: white;
   font-family: 'Barrio', cursive;
   font-size: 45px;
@@ -54,9 +54,6 @@ select{
   font-size: 30px;
   text-shadow: 2px 2px #ff3300;
   list-style-type: none;
-}
-#stage-two img {
-  border-radius: 25px;
 }
 #meet-foe {
   display: none;
@@ -71,7 +68,6 @@ select{
 #stage-three img {
   height: 500px;
   width: 500px;
-
 }
 #stage-three #vs {
   height: 190px;
@@ -79,12 +75,47 @@ select{
   align-items: center;
   margin-top: 50px;
 }
-#stage-three #fight{
+#stage-three #fight {
   background-color: black;
   width: 50%;
   display: block;
   margin: auto;
 }
+
+.icon-img img {
+  max-width: 70px;
+  max-height: 70px;
+}
+.villain-border {
+  box-shadow: 3px 4px 5px 6px red;
+  border-radius: 25px;
+}
+.hero-border {
+  box-shadow: 3px 4px 5px 6px green;
+  border-radius: 25px;
+}
+#stage-three {
+  text-align: center;
+  background-image: url('../img/vintage-boxing.jpg');
+  background-repeat: no-repeat;
+}
+.vs {
+  vertical-align: middle;
+  padding-top: 120px;
+}
+#vs {
+  padding: 30px;
+}
+.battle-button{
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  border: 2px solid white;
+  max-width: 200px;
+  max-height: 100px;
+  padding: 10px;
+  font-family: 'Permanent Marker', cursive;
+
 #stage-five img {
   height: 100px;
   width:100px;
@@ -98,4 +129,5 @@ select{
 }
 #new-weapon {
   display: none;
+
 }

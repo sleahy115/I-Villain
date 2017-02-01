@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link href="css/bootstrap.css" type="text/css" rel="stylesheet">
     <link href ="css/animate.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link href="css/styles.css" type="text/css" rel="stylesheet">
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/scripts.js"></script>
@@ -98,35 +99,53 @@
           <div class="col-md-5">
             <div class="display-villain"></div>
           </div>
-          <div class="col-md-2">
+          <div class="col-md-2 vs">
             <img src="img/vs.png" id="vs" alt="image of vs" >
           </div>
-
-
           <div class="col-md-5">
             <div class="display-hero"></div>
           </div>
         </div>
-      <h2>Choose your weapon...</h2>
-      <div class="radio">
-        <label for="strength">
-          <input type="radio" value="strength" name="skillTest"><img src="img/muscle1.png" alt="" />
-        </label>
+      <h2 class="font-design">Choose your weapon...</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="radio">
+            <label for="strength">
+              <input type="radio" value="strength" name="skillTest">
+              <div class="icon-img">
+                <img src="img/strength.jpg" alt="picture of weight lifter icon" />
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="radio">
+            <label for="speed">
+              <input type="radio" value="speed" name="skillTest">
+              <div class="icon-img">
+                <img src="img/red-rocket.jpg" alt="picture of red rocket icon" />
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="radio">
+            <label for="wit">
+              <input type="radio" value="wits" name="skillTest"><input type="radio" value="strength" name="skillTest">
+              <div class="icon-img">
+                <img src="img/red-brain.jpg" alt="picture of red brain icon" />
+              </div>
+            </label>
+          </div>
+        </div>
       </div>
-      <div class="radio">
-        <label for="speed">
-          <input type="radio" value="speed" name="skillTest">Speed
-        </label>
+      <div class="battle-button">
+        <h1>Battle!</h1>
       </div>
-      <div class="radio">
-        <label for="wit">
-          <input type="radio" value="wits" name="skillTest">Wit
-        </label>
-      </div>
-
       <button type='button' id='fight-button'>Battle!</button>;
       </div>
     </div>
+  </div>
     <div class="container" id="stage-four">
       <div class="victory-display" id="victory-display">
 
