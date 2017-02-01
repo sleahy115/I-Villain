@@ -136,3 +136,7 @@ select{
   height: 100px;
   width: 100px;
 }
+
+#fight-button {
+  display: none;
+}
