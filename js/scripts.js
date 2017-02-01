@@ -156,15 +156,18 @@ chooseOpponent = function() {
 
 heroFinder = function(opponent){
   if (opponent) {
+    console.log("opponent is already set to " + opponent)
     for(var i= 0; i<heroArray.length; i++) {
-      if (opponent ===heroArray[i].heroName) {
+      if (opponent === heroArray[i].heroName) {
         hero = heroArray[i];
       }
     }
   }
   else {
+    console.log("opponent is not yet set.")
     var finderRNG = Math.floor(Math.random() * 10);
-    hero = heroArray[finderRNG];}
+    hero = heroArray[finderRNG]};
+    $(".display-hero").empty();
     hero.heroDisplay();
     var villain = villainOutput;
     $(".display-villain").empty();
@@ -173,26 +176,32 @@ heroFinder = function(opponent){
 
   battleFinder = function(testType){
           var villain = villainOutput;
+          var heroRNG = Math.random();
+          var villainRNG = Math.random();
       if (testType === "strength"){
-          if (hero.strength > villain.strength){
+        var heroStrength = hero.strength + heroRNG;
+        var villainStrength = villain.strength + villainRNG;
+        console.log("heroSt = " + heroStrength + " villSt " + villainStrength);
+          if (heroStrength > villainStrength){
             hero.heroVictory(testType);
-          } else if (hero.strength === villain.strength){
-            alert("a tie");
           } else {
             villain.villainVictory(testType);
           };
       } else if (testType === "wits"){
-          if (hero.wits > villain.wits){
+          var heroWits = hero.wits + heroRNG;
+          var villainWits = villain.wits + villainRNG;
+          console.log("herow = " + heroWits + " villw " + villainWits);
+          if (heroWits > villainWits){
             hero.heroVictory(testType);
-          } else if (hero.wits === villain.wits){
           } else {
             villain.villainVictory(testType);
           };
       } else if (testType === "speed"){
-          if (hero.speed > villain.speed){
+        var heroSpeed = hero.speed + heroRNG;
+        var villainSpeed = villain.speed + villainRNG;
+
+          if (heroSpeed > villainSpeed){
             hero.heroVictory(testType);
-          } else if (hero.speed === villain.speed){
-            alert("a tie!");
           } else {
             villain.villainVictory(testType);
           };
@@ -244,7 +253,7 @@ $(function(){
         var opponent = $(this).val();
         $("#stage-five").hide();
         $("#stage-three").show();
-        heroFinder(this.heroName);
+        heroFinder(opponent);
       });
     };
   });
