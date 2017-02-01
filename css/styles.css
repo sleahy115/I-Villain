@@ -55,9 +55,6 @@ select{
   text-shadow: 2px 2px #ff3300;
   list-style-type: none;
 }
-#stage-two img {
-  border-radius: 25px;
-}
 #meet-foe {
   display: none;
   background-color: #ff3300;
@@ -71,7 +68,6 @@ select{
 #stage-three img {
   height: 500px;
   width: 500px;
-
 }
 #stage-three #vs {
   height: 190px;
@@ -79,9 +75,21 @@ select{
   align-items: center;
   margin-top: 50px;
 }
-#stage-three #fight{
+#stage-three #fight {
   background-color: black;
   width: 50%;
   display: block;
   margin: auto;
+}
+.icon-img img {
+  max-width: 70px;
+  max-height: 70px;
+}
+.villain-border {
+  box-shadow: 3px 4px 5px 6px red;
+  border-radius: 25px;
+}
+.hero-border {
+  box-shadow: 3px 4px 5px 6px green;
+  border-radius: 25px;
 }
