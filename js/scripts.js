@@ -24,6 +24,7 @@ function Hero(name, img, strength, speed, wits) {
 var answersArray = [];
 var villainOutput;
 var hero;
+var opponent;
 
 var tendencyTest = function(){
   var highTendency = 0;
@@ -156,11 +157,11 @@ chooseOpponent = function() {
   };
 };
 
-heroFinder = function(opponent){
-  if (opponent) {
-    console.log("opponent is already set to " + opponent)
+heroFinder = function(antagonist){
+  if (antagonist) {
+    console.log("antagonist is already set to " + antagonist)
     for(var i= 0; i<heroArray.length; i++) {
-      if (opponent === heroArray[i].heroName) {
+      if (antagonist === heroArray[i].heroName) {
         hero = heroArray[i];
       }
     }
@@ -173,6 +174,8 @@ heroFinder = function(opponent){
     hero.heroDisplay();
     var villain = villainOutput;
     $(".display-villain").empty();
+    opponent = hero.heroName;
+    console.log(opponent);
     villain.villainDisplay();
   };
 
@@ -234,6 +237,7 @@ $(function(){
     $("#stage-two").hide();
     $("#stage-three").show();
     heroFinder();
+    console.log(opponent);
   });
 
   $("#fight-button").click(function(event){
@@ -244,7 +248,7 @@ $(function(){
     battleFinder(testInput);
     $("#pick-opponent").show();
     $("#pick-again").show();
-
+    $("#new-weapon").show();
   });
 
   $("#pick-opponent").click(function(){
@@ -255,7 +259,7 @@ $(function(){
       console.log(buttonid);
       $(buttonid).click(function(){
         console.log("the value of what you're clicking is " + $(this).val())
-        var opponent = $(this).val();
+        opponent = $(this).val();
         $("#stage-four").hide();
         $("#stage-five").hide();
         $("#stage-three").show();
@@ -265,5 +269,11 @@ $(function(){
   });
   $("#pick-again").click(function() {
     location.reload();
+  });
+  $("#new-weapon").click(function() {
+    $("#stage-three").show();
+    $("#stage-four").hide();
+    console.log(opponent);
+    heroFinder(opponent);
   });
 });

@@ -96,3 +96,6 @@ select{
 #pick-again{
   display: none;
 }
+#new-weapon {
+  display: none;
+}
