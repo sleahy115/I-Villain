@@ -25,6 +25,7 @@ var answersArray = [];
 var villainOutput;
 var hero;
 var opponent;
+var testInput;
 
 var tendencyTest = function(){
   var highTendency = 0;
@@ -61,7 +62,7 @@ var tendencyTest = function(){
 
 var darthVader = new Villain('Darth Vader', 'img/darth-vader.jpg', 4, 2, 3, 'dominate', 'convert', 'helmet', 'supernatural', 'lactose-intolerance');
 var alienQueen = new Villain('Alien Queen', 'img/alien.jpg', 5, 4, 1, 'dominate', 'kill', 'body', 'physical', 'strawberry');
-var bellatrix = new Villain('Bellatrix LeStrange', 'img/bellatrix-the-strange.jpg', 3, 4, 3, 'chaos', 'torture', 'cape', 'supernatural', 'mint-chip');
+var bellatrix = new Villain('Bellatrix LeStrange', 'img/bellatrix-the-strange.jpg', 3, 4, 3, 'kill', 'torture', 'cape', 'supernatural', 'mint-chip');
 var whiteWitch = new Villain('White Witch', 'img/whitewitch.jpg', 4, 2, 4, 'dominate', 'kill', 'cape', 'supernatural', 'vanilla');
 var skeletor = new Villain('Skeletor', 'img/skelator.jpg', 4, 2, 1, 'dominate', 'torture', 'underwear', 'supernatural', 'bubble-gum');
 var sauron = new Villain('Sauron', 'img/the-eye-of-sauron.jpg', 5, 1, 5, 'destroy', 'convert', 'body', 'supernatural', 'chunky-monkey');
@@ -97,10 +98,10 @@ Villain.prototype.villainProfile = function() {
   profile += "</h1>";
   profile += "<img src='" + this.img + "' class='animated rotateIn villain-border' alt='image of '" + this.villainName + "'" ;
   profile += "<ul>";
-  profile += "<li >I like to: " + this.motive + "</li>";
-  profile += "<li>In my free time I enjoy: " + this.victory + "</li>";
-  profile += "<li>Wardrobe: " + this.costume + "</li>";
-  profile += "<li>I have " + this.powers + " powers!!!</li>";
+  profile += "<li >Given my preference, I would " + this.motive + " the world.</li>";
+  profile += "<li>With my enemy in my hands, I am most tempted to " + this.victory + " them.</li>";
+  profile += "<li>My " + this.costume + " is the most fabulous thing about me.</li>";
+  profile += "<li>My powers are best described as  " + this.powers + ".</li>";
   profile += "<li>I like to reward my self with " + this.iceCream + " ice cream after a day of EVIL...</li></ul>";
   $(".villain-profile").append(profile);
 }
@@ -240,15 +241,28 @@ $(function(){
     console.log(opponent);
   });
 
+  $("#strength").click(function(){
+    console.log("strength clicked")
+    testInput = "strength";
+  });
+
+  $("#speed").click(function(){
+    console.log("speed clicked")
+    testInput = "speed";
+  })
+  $("#wits").click(function(){
+    console.log("wits clicked")
+    testInput = "wits";
+  })
+
   $("#fight-button").click(function(event){
-    var testInput = $("input:radio[name=skillTest]:checked").val();
     console.log(testInput);
     $("#stage-three").hide();
     $("#stage-four").show();
-    battleFinder(testInput);
     $("#pick-opponent").show();
     $("#pick-again").show();
     $("#new-weapon").show();
+    battleFinder(testInput);
   });
 
   $("#pick-opponent").click(function(){

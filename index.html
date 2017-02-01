@@ -86,14 +86,13 @@
       </div>
 
 
-      <button type="button" id="meet-foe" name="button">Meet your nemisis</button>
+      <button type="button" id="meet-foe"  class = "button-styling" name="button">Meet your nemesis</button>
 
 
 
 
     </div>
     <div class="container" id="stage-three">
-      <div class="container">
         <img src="img/fight.png" class="fight">
         <div class="row">
           <div class="col-md-5">
@@ -109,50 +108,32 @@
       <h2 class="font-design">Choose your weapon...</h2>
       <div class="row">
         <div class="col-md-4">
-          <div class="radio">
-            <label for="strength">
-              <input type="radio" value="strength" name="skillTest">
+              <input type="image" id="strength" src="img/strength.jpg" value="strength" name="skillTest">
               <div class="icon-img">
-                <img src="img/strength.jpg" alt="picture of weight lifter icon" />
-              </div>
-            </label>
+                <!-- <img src="img/strength.jpg" alt="picture of weight lifter icon" /> -->
           </div>
         </div>
         <div class="col-md-4">
-          <div class="radio">
-            <label for="speed">
-              <input type="radio" value="speed" name="skillTest">
-              <div class="icon-img">
-                <img src="img/red-rocket.jpg" alt="picture of red rocket icon" />
+          <div class="icon-img">
+              <input type="image" id="speed" src="img/red-rocket.jpg" value="speed" name="skillTest">
               </div>
-            </label>
-          </div>
         </div>
         <div class="col-md-4">
-          <div class="radio">
-            <label for="wit">
-              <input type="radio" value="wits" name="skillTest"><input type="radio" value="strength" name="skillTest">
-              <div class="icon-img">
-                <img src="img/red-brain.jpg" alt="picture of red brain icon" />
+          <div class="icon-img">
+              <input type="image" id="wits" value="wits" src="img/red-brain.jpg" name="skillTest"></button>
               </div>
-            </label>
-          </div>
         </div>
       </div>
-      <div class="battle-button">
-        <h1>Battle!</h1>
+      <button type='button' class = "button-styling" id='fight-button'>Battle!</button>;
       </div>
-      <button type='button' id='fight-button'>Battle!</button>;
-      </div>
-    </div>
   </div>
     <div class="container" id="stage-four">
       <div class="victory-display" id="victory-display">
 
       </div>
-      <button type="button" id="pick-opponent">Choose another Opponent</button>
-      <button type="button" id="pick-again">Play as a different villain</button>
-      <button type="button" id="new-weapon">try again with a different weapon</button>
+      <button type="button" class = "button-styling" id="pick-opponent">Another Opponent</button>
+      <button type="button" class = "button-styling" id="pick-again">Different Villain</button>
+      <button type="button" class = "button-styling" id="new-weapon">Different Weapon</button>
     </div>
     <div class="container" id="stage-five">
       <div class="choose-opponent1">
