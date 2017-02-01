@@ -106,6 +106,7 @@ Villain.prototype.villainProfile = function() {
 }
 
 
+
 Villain.prototype.villainDisplay = function() {
   var profile = '';
   profile += "<img src='" + this.img + "' class='animated slideInLeft villain-border' alt='image of '" + this.villainName + "'";

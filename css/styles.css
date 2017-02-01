@@ -1,37 +1,63 @@
 body {
   background-color: black;
+  background-image: url('../img/boxing-ring.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1 {
+  font-size: 6em;
+}
+#villain-questions {
+  text-align: center;
 }
 .background-container {
   color: white;
   font-family: 'Shadows Into Light', cursive;
   font-size: 30px;
   text-shadow: 2px 2px #ff3300;
-  background-image: url("../img/villain-pub2.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  /*background-image: url("../img/villain-pub2.jpeg");*/
+  /*background-size: cover;
+  background-repeat: no-repeat;*/
+  background-color: rgba(0,0,0,0.7);
   margin-top: 25px;
 }
 .background-container img {
   opacity: 0.7;
 }
+
 .header {
   color: white;
   font-family: 'Barrio', cursive;
   font-size: 25px;
+  background-image: url("../img/eyes-background.gif");
+  background-position: center;
   text-align: center;
   text-shadow: 2px 2px #ff3300;
-  background-image: url("../img/eyes-background.gif");
+  background-repeat: no-repeat;
   height: 150px;
+  margin-bottom: 40px;
+}
+form {
+  margin-top: 80px;
+}
+p {
+  text-shadow: none;
+}
+.header h2 {
+  text-shadow: none;
+  font-family: 'Permanent Marker', cursive;
+  margin-top: 0;
 }
 .header img {
   float: left;
 }
-  .villain-submit {
+
+  /*.villain-submit {
   margin-top: 10px;
   background-color: #ff3300;
   margin-top: 35px;
-  text-shadow: 2px 2px #ff3300;
-}
+  text-shadow: 2px 2px #ff3300;*/
+/*}*/
 select{
   background-color: #ff3300;
   text-shadow: 2px 2px black;
@@ -85,6 +111,9 @@ select{
 .icon-img img {
   max-width: 70px;
   max-height: 70px;
+  border: 1px solid red;
+  border-radius: 20px;
+  margin: 5px;
 }
 .villain-border {
   box-shadow: 3px 4px 5px 6px red;
@@ -96,7 +125,6 @@ select{
 }
 #stage-three {
   text-align: center;
-  background-image: url('../img/vintage-boxing.jpg');
   background-repeat: no-repeat;
 }
 .vs {
@@ -115,7 +143,8 @@ select{
   max-height: 100px;
   padding: 10px;
   font-family: 'Permanent Marker', cursive;
-
+  margin: 0 auto;
+}
 #stage-five img {
   height: 100px;
   width:100px;
