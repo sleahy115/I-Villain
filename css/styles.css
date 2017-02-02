@@ -67,6 +67,7 @@ select {
   -webkit-appearance: none;
 }
 #stage-two {
+  display: none;
   color: white;
   text-align: center;
 }
@@ -147,6 +148,10 @@ select {
   margin-top: 30px;
   font-size: 25px;
 }
+
+#stage-five {
+  display: none;
+}
 #stage-five img {
   height: 100px;
   width:100px;
@@ -180,6 +185,7 @@ select {
 }
 #stage-four {
   text-align: center;
+  display: none;
 }
 #stage-four h1 {
   color: white;
@@ -207,7 +213,7 @@ select {
 #hero-questions {
   text-align: center;
 }
-#stage-six h1 {
+#stage-six h1, #stage-three h1 {
   color: white;
   font-family: 'Barrio', cursive;
   font-size: 3em;
@@ -223,6 +229,7 @@ select {
 }
 #stage-seven {
   text-align: center;
+  display: none;
 }
 #stage-seven #heading, .font-design {
   color: white;

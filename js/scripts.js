@@ -1,29 +1,29 @@
 // Villain constructor
 function Villain(name, img, strength, speed, wits, motive, victory, costume, powers, iceCream) {
-    this.villainName = name;
-    this.img = img;
-    this.strength = strength;
-    this.speed = speed;
-    this.wits = wits;
-    this.motive = motive;
-    this.victory = victory;
-    this.costume = costume;
-    this.powers = powers;
-    this.iceCream = iceCream;
+  this.villainName = name;
+  this.img = img;
+  this.strength = strength;
+  this.speed = speed;
+  this.wits = wits;
+  this.motive = motive;
+  this.victory = victory;
+  this.costume = costume;
+  this.powers = powers;
+  this.iceCream = iceCream;
 }
 
 // Hero constructor
 function Hero(name, img, strength, speed, wits, motive, idol, subject, weapon, iceCream) {
-    this.heroName = name;
-    this.img = img;
-    this.strength = strength;
-    this.speed = speed;
-    this.wits = wits;
-    this.motive = motive;
-    this.idol = idol;
-    this.subject = subject;
-    this.weapon = weapon;
-    this.iceCream = iceCream;
+  this.heroName = name;
+  this.img = img;
+  this.strength = strength;
+  this.speed = speed;
+  this.wits = wits;
+  this.motive = motive;
+  this.idol = idol;
+  this.subject = subject;
+  this.weapon = weapon;
+  this.iceCream = iceCream;
 }
 
 //Global variables
@@ -50,15 +50,15 @@ var loki = new Villain('Loki', 'img/loki.png', 2, 3, 5, 'destroy', 'kill', 'helm
 var villainsArray = [];
 villainsArray.push(darthVader, alienQueen, bellatrix, whiteWitch, skeletor, sauron, terminator, gru, goblinKing, khan, loki)
 
-var hermione = new Hero('Hermione', 'img/hermione.jpg', 2, 4, 5, 'freedom','mlk', 'languages', 'wand', 'lactose-intolerance');
-var mrIncredible = new Hero('Mr. Incredible', 'img/mr-incredible.jpg', 5, 4, 2, 'justice', 'superman', 'pe', 'strength', 'vanilla' );
+var hermione = new Hero('Hermione', 'img/hermione.jpg', 2, 4, 5, 'freedom', 'mlk', 'languages', 'wand', 'lactose-intolerance');
+var mrIncredible = new Hero('Mr. Incredible', 'img/mr-incredible.jpg', 5, 4, 2, 'justice', 'superman', 'pe', 'strength', 'vanilla');
 var glenda = new Hero('Glenda the Good Witch', 'img/glinda-the-good-witch.jpg', 2, 4, 4, 'freedom', 'mrsobama', 'government', 'wand', 'bubble-gum');
-var batman = new Hero('Batman', 'img/batman.jpg', 4, 3, 4, 'justice', 'giuliani', 'science', 'strength', 'chocolate' );
+var batman = new Hero('Batman', 'img/batman.jpg', 4, 3, 4, 'justice', 'giuliani', 'science', 'strength', 'chocolate');
 var daenerys = new Hero('Daenerys', 'img/daenerys.jpg', 2, 2, 4, 'justice', 'mlk', 'government', 'dragons', 'rocky-road');
-var roadRunner = new Hero('Road Runner', 'img/roadrunner.png', 1, 5, 4, 'freedom', 'bolt', 'pe','trickery', 'rocky-road');
+var roadRunner = new Hero('Road Runner', 'img/roadrunner.png', 1, 5, 4, 'freedom', 'bolt', 'pe', 'trickery', 'rocky-road');
 var dudleyDoRight = new Hero('Dudley Do Right', 'img/dudley-do-right.jpg', 3, 4, 1, 'justice', 'superman', 'government', 'strength', 'cherry-garcia');
 var superMario = new Hero('Super Mario', 'img/Super-Mario.jpg', 4, 4, 2, 'freedom', 'giuliani', 'pe', 'strength', 'mint-chip');
-var docBrown = new Hero('Doc Brown', 'img/doc-brown.jpg', 2, 5, 5, 'justice', 'mrsobama', 'science','genius', 'chunky-monkey');
+var docBrown = new Hero('Doc Brown', 'img/doc-brown.jpg', 2, 5, 5, 'justice', 'mrsobama', 'science', 'genius', 'chunky-monkey');
 var professorX = new Hero('Professor X', 'img/prof-x.jpg', 5, 1, 5, 'justice', 'mlk', 'science', 'genius', 'pistachio');
 
 var heroArray = [];
@@ -66,315 +66,309 @@ var heroArray = [];
 heroArray.push(hermione, mrIncredible, glenda, batman, daenerys, roadRunner, dudleyDoRight, superMario, docBrown, professorX);
 
 var tendencyTest = function() {
-    var highTendency = 0;
-    var villainTendency = "";
-
-    for (var i = 0; i < villainsArray.length; i++) {
-        var tempTendency = 0;
-        if (answersArray[0] === villainsArray[i].motive) {
-            tempTendency++
-        };
-        if (answersArray[1] === villainsArray[i].victory) {
-            tempTendency++
-        };
-        if (answersArray[2] === villainsArray[i].costume) {
-            tempTendency++
-        };
-        if (answersArray[3] === villainsArray[i].powers) {
-            tempTendency++
-        };
-        if (answersArray[4] === villainsArray[i].iceCream) {
-            tempTendency++
-        };
-        if (tempTendency > highTendency) {
-            villainTendency = villainsArray[i].villainName;
-            highTendency = tempTendency;
-        };
+  var highTendency = 0;
+  var villainTendency = "";
+  for (var i = 0; i < villainsArray.length; i++) {
+    var tempTendency = 0;
+    if (answersArray[0] === villainsArray[i].motive) {
+      tempTendency++
     };
-    for (var j = 0; j < villainsArray.length; j++) {
-        if (villainTendency === villainsArray[j].villainName) {
-            return villainsArray[j];
-        };
+    if (answersArray[1] === villainsArray[i].victory) {
+      tempTendency++
     };
+    if (answersArray[2] === villainsArray[i].costume) {
+      tempTendency++
+    };
+    if (answersArray[3] === villainsArray[i].powers) {
+      tempTendency++
+    };
+    if (answersArray[4] === villainsArray[i].iceCream) {
+      tempTendency++
+    };
+    if (tempTendency > highTendency) {
+      villainTendency = villainsArray[i].villainName;
+      highTendency = tempTendency;
+    };
+  };
+  for (var j = 0; j < villainsArray.length; j++) {
+    if (villainTendency === villainsArray[j].villainName) {
+      return villainsArray[j];
+    };
+  };
 };
 
 Villain.prototype.villainProfile = function() {
-    var profile = '';
-    profile += '<h1 id="heading">';
-    profile += this.villainName;
-    profile += "</h1>";
-    profile += "<img src='" + this.img + "' class='animated rotateIn villain-border' alt='image of '" + this.villainName + "'";
-    profile += "<ul>";
-    profile += "<li></li><li>Given my preference, I would " + this.motive + " the world.</li>";
-    profile += "<li>With my enemy in my hands, I am most tempted to " + this.victory + " them.</li>";
-    profile += "<li>My " + this.costume + " is the most fabulous thing about me.</li>";
-    profile += "<li>My powers are best described as  " + this.powers + ".</li>";
-    profile += "<li>I like to reward my self with " + this.iceCream + " ice cream after a day of EVIL...</li></ul>";
-    $(".villain-profile").append(profile);
+  var profile = '';
+  profile += '<h1 id="heading">';
+  profile += this.villainName;
+  profile += "</h1>";
+  profile += "<img src='" + this.img + "' class='animated rotateIn villain-border' alt='image of '" + this.villainName + "'";
+  profile += "<ul>";
+  profile += "<li></li><li>Given my preference, I would " + this.motive + " the world.</li>";
+  profile += "<li>With my enemy in my hands, I am most tempted to " + this.victory + " them.</li>";
+  profile += "<li>My " + this.costume + " is the most fabulous thing about me.</li>";
+  profile += "<li>My powers are best described as  " + this.powers + ".</li>";
+  profile += "<li>I like to reward my self with " + this.iceCream + " ice cream after a day of EVIL...</li></ul>";
+  $(".villain-profile").append(profile);
 }
 
 Villain.prototype.villainDisplay = function() {
-    var profile = '';
-    profile += "<img src='" + this.img + "' class='animated slideInLeft villain-border' alt='image of '" + this.villainName + "'";
-    profile += "<h1>";
-    profile += this.villainName;
-    profile += "</h1>";
-    $(".display-villain").append(profile);
+  var profile = '';
+  profile += "<img src='" + this.img + "' class='animated slideInLeft villain-border' alt='image of " + this.villainName + "'>";
+  profile += "<h1>" + this.villainName + "</h1>";
+  $(".display-villain").append(profile);
 }
 
 Hero.prototype.heroDisplay = function(displayLocation) {
-    var profile = '';
-    profile += "<img src='" + this.img + "' class='animated slideInRight hero-border' alt='image of '" + this.heroName + "'";
-    profile += "<h1>";
-    profile += this.heroName;
-    profile += "</h1>";
-    $(displayLocation).append(profile);
+  var profile = '';
+  profile += "<img src='" + this.img + "' class='animated slideInRight hero-border' alt='image of " + this.heroName + "'>";
+  profile += "<h1>" + this.heroName + "</h1>";
+  $(displayLocation).append(profile);
 }
+
 Hero.prototype.heroPlayerDisplay = function(displayLocation) {
-    var profile = '';
-    profile += "<h1>";
-    profile += this.heroName;
-    profile += "</h1>";
-    profile += "<img src='" + this.img + "' class='animated slideInRight hero-border' alt='image of '" + this.heroName + "'<br>";
-    profile += "<li></li><li>I fight for " + this.motive + "!</li>";
-    profile += "<li>" + this.idol + " is my idol.</li>";
-    profile += "<li>My " + this.weapon + " is my preferred tool when smiting evil.</li>";
-    profile += "<li>In school, my best subject was " + this.subject + ".</li>";
-    profile += "<li>I like to reward my self with " + this.iceCream + " ice cream after a day of thwarting villainous plans.</li></ul>";
-    profile += '<button class="button-styling" id="fight-evil">Fight your  nemesis</button>'
-    $(displayLocation).empty();
-    $(displayLocation).append(profile);
+  var profile = '';
+  profile += "<h1>";
+  profile += this.heroName;
+  profile += "</h1>";
+  profile += "<img src='" + this.img + "' class='animated slideInRight hero-border' alt='image of '" + this.heroName + "'<br>";
+  profile += "<li></li><li>I fight for " + this.motive + "!</li>";
+  profile += "<li>" + this.idol + " is my idol.</li>";
+  profile += "<li>My " + this.weapon + " is my preferred tool when smiting evil.</li>";
+  profile += "<li>In school, my best subject was " + this.subject + ".</li>";
+  profile += "<li>I like to reward my self with " + this.iceCream + " ice cream after a day of thwarting villainous plans.</li></ul>";
+  profile += '<button class="button-styling" id="fight-evil">Fight your  nemesis</button>'
+  $(displayLocation).empty();
+  $(displayLocation).append(profile);
 }
 
 Villain.prototype.villainVictory = function(input) {
-    var profile = '';
+  var profile = '';
+  profile += "<h1>Victory Is Yours, " + this.villainName + "!  Your pathetic opponent has been crushed.</h1>";
+  profile += "<img src='" + this.img + "' class='animated tada villain-border' alt='image of '" + this.villainName + "'";
 
-
-    profile += "<h1>Victory Is Yours, " + this.villainName + "!  Your pathetic opponent has been crushed.</h1>";
-    profile += "<img src='" + this.img + "' class='animated tada villain-border' alt='image of '" + this.villainName + "'";
-
-    profile += "<br><h2>";
-    profile += "In a battle of " + input + ", "+ this.villainName+" is victorious!";
-    profile += "</h2>";
-    $(".victory-display").empty();
-    $(".victory-display").append(profile);
+  profile += "<br><h2>";
+  profile += "In a battle of " + input + ", " + this.villainName + " is victorious!";
+  profile += "</h2>";
+  $(".victory-display").empty();
+  $(".victory-display").append(profile);
 }
 
 Hero.prototype.heroVictory = function(input) {
-    var profile = '';
+  var profile = '';
 
-    profile += "<h1>By the powers of good, " + this.heroName + " has prevailed</h1>";
-    profile += "<img src='" + this.img + "' class='animated tada hero-border' alt='image of '" + this.heroName + "'";
+  profile += "<h1>By the powers of good, " + this.heroName + " has prevailed</h1>";
+  profile += "<img src='" + this.img + "' class='animated tada hero-border' alt='image of '" + this.heroName + "'";
 
-    profile += "<br><h2>";
-    profile += "In a battle of " + input + ", "+ this.heroName + " is victorious!";
-    profile += "</h2>";
-    $(".victory-display").empty();
-    $(".victory-display").append(profile);
+  profile += "<br><h2>";
+  profile += "In a battle of " + input + ", " + this.heroName + " is victorious!";
+  profile += "</h2>";
+  $(".victory-display").empty();
+  $(".victory-display").append(profile);
 }
 
 chooseOpponent = function() {
-    for (var i = 0; i < heroArray.length; i++) {
-        var profile = '';
-        profile += "<input type = 'image' value = '" + heroArray[i].heroName + "' id = 'click-opponent" + [i] + "' src='" + heroArray[i].img + "' alt='image of '" + heroArray[i].heroName + "'>";
-        // profile += "<input"
-        // profile += "<button class='click-opponent' id='click-opponent" + [i] + "'' type='button' value='" + heroArray[i].heroName + "'>" + heroArray[i].heroName + "</button>";
-        var placementString = ".choose-opponent" + [i];
-        $(placementString).empty();
-        $(placementString).append(profile);
-    };
+  for (var i = 0; i < heroArray.length; i++) {
+    var profile = '';
+    profile += "<input type = 'image' value = '" + heroArray[i].heroName + "' id = 'click-opponent" + [i] + "' src='" + heroArray[i].img + "' alt='image of '" + heroArray[i].heroName + "'>";
+    // profile += "<input"
+    // profile += "<button class='click-opponent' id='click-opponent" + [i] + "'' type='button' value='" + heroArray[i].heroName + "'>" + heroArray[i].heroName + "</button>";
+    var placementString = ".choose-opponent" + [i];
+    $(placementString).empty();
+    $(placementString).append(profile);
+  };
 };
 
 heroFinder = function(antagonist) {
-    if (antagonist) {
-        for (var i = 0; i < heroArray.length; i++) {
-            if (antagonist === heroArray[i].heroName) {
-                hero = heroArray[i];
-            }
-        }
-    } else {
-        var finderRNG = Math.floor(Math.random() * 10);
-        hero = heroArray[finderRNG]
-    };
+  if (antagonist) {
+    for (var i = 0; i < heroArray.length; i++) {
+      if (antagonist === heroArray[i].heroName) {
+        hero = heroArray[i];
+      }
+    }
+  } else {
+    var finderRNG = Math.floor(Math.random() * 10);
+    hero = heroArray[finderRNG]
+  };
 
-    $(".display-hero").empty();
-    hero.heroDisplay(".display-hero");
-    var villain = villainOutput;
-    $(".display-villain").empty();
-    opponent = hero.heroName;
-    villain.villainDisplay();
+  $(".display-hero").empty();
+  hero.heroDisplay(".display-hero");
+  var villain = villainOutput;
+  $(".display-villain").empty();
+  opponent = hero.heroName;
+  villain.villainDisplay();
 };
 
 battleFinder = function(testType) {
-    var villain = villainOutput;
-    var heroRNG = Math.random();
-    var villainRNG = Math.random();
-    if (testType === "strength") {
-        var heroStrength = hero.strength + heroRNG;
-        var villainStrength = villain.strength + villainRNG;
-        if (heroStrength > villainStrength) {
-            hero.heroVictory(testType);
-        } else {
-            villain.villainVictory(testType);
-        };
-    } else if (testType === "wits") {
-        var heroWits = hero.wits + heroRNG;
-        var villainWits = villain.wits + villainRNG;
-        if (heroWits > villainWits) {
-            hero.heroVictory(testType);
-        } else {
-            villain.villainVictory(testType);
-        };
-    } else if (testType === "speed") {
-        var heroSpeed = hero.speed + heroRNG;
-        var villainSpeed = villain.speed + villainRNG;
-
-        if (heroSpeed > villainSpeed) {
-            hero.heroVictory(testType);
-        } else {
-            villain.villainVictory(testType);
-        };
+  var villain = villainOutput;
+  var heroRNG = Math.random();
+  var villainRNG = Math.random();
+  if (testType === "strength") {
+    var heroStrength = hero.strength + heroRNG;
+    var villainStrength = villain.strength + villainRNG;
+    if (heroStrength > villainStrength) {
+      hero.heroVictory(testType);
+    } else {
+      villain.villainVictory(testType);
     };
+  } else if (testType === "wits") {
+    var heroWits = hero.wits + heroRNG;
+    var villainWits = villain.wits + villainRNG;
+    if (heroWits > villainWits) {
+      hero.heroVictory(testType);
+    } else {
+      villain.villainVictory(testType);
+    };
+  } else if (testType === "speed") {
+    var heroSpeed = hero.speed + heroRNG;
+    var villainSpeed = villain.speed + villainRNG;
+
+    if (heroSpeed > villainSpeed) {
+      hero.heroVictory(testType);
+    } else {
+      villain.villainVictory(testType);
+    };
+  };
 };
 
 var heroicTendency = function() {
-    var highTendency = 0;
-    var heroTendency = "";
+  var highTendency = 0;
+  var heroTendency = "";
 
-    for (var i = 0; i < heroArray.length; i++) {
-      console.log(heroArray[i].heroName);
-        var tempTendency = 0;
-        if (herosAnswersArray[0] === heroArray[i].motive) {
-            tempTendency++
-            console.log('motive match' + tempTendency)
-        };
-        if (herosAnswersArray[1] === heroArray[i].idol) {
-            tempTendency++
-            console.log('idol match' + tempTendency)
-        };
-        if (herosAnswersArray[2] === heroArray[i].subject) {
-            tempTendency++
-            console.log('subject match' + tempTendency)
-        };
-        if (herosAnswersArray[3] === heroArray[i].weapon) {
-            tempTendency++
-            console.log('weapon match' + tempTendency)
-        };
-        if (herosAnswersArray[4] === heroArray[i].iceCream) {
-            tempTendency++
-            console.log('ice cream match' + tempTendency)
-        };
-        if (tempTendency > highTendency) {
-            heroTendency = heroArray[i].heroName;
-            highTendency = tempTendency;
-            console.log("highTendency")
-        };
+  for (var i = 0; i < heroArray.length; i++) {
+    console.log(heroArray[i].heroName);
+    var tempTendency = 0;
+    if (herosAnswersArray[0] === heroArray[i].motive) {
+      tempTendency++
+      console.log('motive match' + tempTendency)
     };
-    for (var j = 0; j < heroArray.length; j++) {
-        if (heroTendency === heroArray[j].heroName) {
-          console.log(heroTendency);
-            return heroArray[j];
-        };
+    if (herosAnswersArray[1] === heroArray[i].idol) {
+      tempTendency++
+      console.log('idol match' + tempTendency)
     };
+    if (herosAnswersArray[2] === heroArray[i].subject) {
+      tempTendency++
+      console.log('subject match' + tempTendency)
+    };
+    if (herosAnswersArray[3] === heroArray[i].weapon) {
+      tempTendency++
+      console.log('weapon match' + tempTendency)
+    };
+    if (herosAnswersArray[4] === heroArray[i].iceCream) {
+      tempTendency++
+      console.log('ice cream match' + tempTendency)
+    };
+    if (tempTendency > highTendency) {
+      heroTendency = heroArray[i].heroName;
+      highTendency = tempTendency;
+      console.log("highTendency")
+    };
+  };
+  for (var j = 0; j < heroArray.length; j++) {
+    if (heroTendency === heroArray[j].heroName) {
+      console.log(heroTendency);
+      return heroArray[j];
+    };
+  };
 };
 
 // User Logic
 $(function() {
-    $("form#villain-questions").submit(function(event) {
-        event.preventDefault();
-        var motiveInput = $("#motive").val();
-        var victoryInput = $("#victory").val();
-        var costumeInput = $("#costume").val();
-        var powersInput = $("#powers").val();
-        var iceCreamInput = $("#iceCream").val();
-        answersArray.push(motiveInput, victoryInput, costumeInput, powersInput, iceCreamInput);
-        villainOutput = tendencyTest();
-        $("#stage-one").hide();
-        $("#stage-two").show();
-        $("#meet-foe").show();
-        villainOutput.villainProfile();
-    });
+  $("form#villain-questions").submit(function(event) {
+    event.preventDefault();
+    var motiveInput = $("#motive").val();
+    var victoryInput = $("#victory").val();
+    var costumeInput = $("#costume").val();
+    var powersInput = $("#powers").val();
+    var iceCreamInput = $("#iceCream").val();
+    answersArray.push(motiveInput, victoryInput, costumeInput, powersInput, iceCreamInput);
+    villainOutput = tendencyTest();
+    $("#stage-one").hide();
+    $("#stage-two").show();
+    $("#meet-foe").show();
+    villainOutput.villainProfile();
+  });
 
-    $("#meet-foe").click(function() {
-        $("#stage-two").hide();
-        $("#stage-three").show();
-        heroFinder();
-    });
+  $("#meet-foe").click(function() {
+    $("#stage-two").hide();
+    $("#stage-three").show();
+    heroFinder();
+  });
 
-    $("#strength").click(function() {
-        testInput = "strength";
-        $("#fight-button").show();
-    });
+  $("#strength").click(function() {
+    testInput = "strength";
+    $("#fight-button").show();
+  });
 
-    $("#speed").click(function() {
-        testInput = "speed";
-        $("#fight-button").show();
-    });
+  $("#speed").click(function() {
+    testInput = "speed";
+    $("#fight-button").show();
+  });
 
-    $("#wits").click(function() {
-        testInput = "wits";
-        $("#fight-button").show();
-    });
+  $("#wits").click(function() {
+    testInput = "wits";
+    $("#fight-button").show();
+  });
 
-    $("#fight-button").click(function() {
-        $("#stage-three").hide();
-        $("#stage-four").show();
-        $("#pick-opponent").show();
-        $("#pick-again").show();
-        $("#new-weapon").show();
-        $("#quiz-hero").show();
+  $("#fight-button").click(function() {
+    $("#stage-three").hide();
+    $("#stage-four").show();
+    $("#pick-opponent").show();
+    $("#pick-again").show();
+    $("#new-weapon").show();
+    $("#quiz-hero").show();
 
-        battleFinder(testInput);
-    });
+    battleFinder(testInput);
+  });
 
-    $("#pick-opponent").click(function() {
-        $("#stage-five").show();
-        chooseOpponent();
-        for (var i = 0; i < heroArray.length; i++) {
-            var buttonid = "#click-opponent" + [i];
-            $(buttonid).click(function() {
-                opponent = $(this).val();
-                $("#stage-four").hide();
-                $("#stage-five").hide();
-                $("#stage-three").show();
-                heroFinder(opponent);
-            });
-        };
-    });
-
-    $("#pick-again").click(function() {
-        location.reload();
-    });
-
-    $("#new-weapon").click(function() {
-        $("#stage-three").show();
+  $("#pick-opponent").click(function() {
+    $("#stage-five").show();
+    chooseOpponent();
+    for (var i = 0; i < heroArray.length; i++) {
+      var buttonid = "#click-opponent" + [i];
+      $(buttonid).click(function() {
+        opponent = $(this).val();
         $("#stage-four").hide();
-        heroFinder(opponent);
-    });
-    $("#quiz-hero").click(function(){
-      $("#stage-four").hide();
-      $("#stage-six").show();
-    });
-
-    $("form#hero-questions").submit(function(event){
-      event.preventDefault();
-      var motiveInput = $("#hero-motive").val();
-      var victoryInput = $("#hero-idol").val();
-      var costumeInput = $("#hero-subject").val();
-      var powersInput = $("#hero-weapon").val();
-      var iceCreamInput = $("#hero-iceCream").val();
-      herosAnswersArray =[];
-      herosAnswersArray.push(motiveInput, victoryInput, costumeInput, powersInput, iceCreamInput);
-      heroOutput = "";
-      heroOutput = heroicTendency();
-      console.log(heroOutput.heroName);
-      heroOutput.heroPlayerDisplay(".hero-quiz-display");
-      $("#stage-six").hide();
-      $("#stage-seven").show();
-      $('#fight-evil').click(function(){
-        $("#stage-seven").hide();
+        $("#stage-five").hide();
         $("#stage-three").show();
-        heroFinder(heroOutput.heroName);
+        heroFinder(opponent);
       });
+    };
+  });
+
+  $("#pick-again").click(function() {
+    location.reload();
+  });
+
+  $("#new-weapon").click(function() {
+    $("#stage-three").show();
+    $("#stage-four").hide();
+    heroFinder(opponent);
+  });
+
+  $("#quiz-hero").click(function() {
+    $("#stage-four").hide();
+    $("#stage-six").show();
+  });
+
+  $("form#hero-questions").submit(function(event) {
+    event.preventDefault();
+    var motiveInput = $("#hero-motive").val();
+    var victoryInput = $("#hero-idol").val();
+    var costumeInput = $("#hero-subject").val();
+    var powersInput = $("#hero-weapon").val();
+    var iceCreamInput = $("#hero-iceCream").val();
+    herosAnswersArray = [];
+    herosAnswersArray.push(motiveInput, victoryInput, costumeInput, powersInput, iceCreamInput);
+    heroOutput = "";
+    heroOutput = heroicTendency();
+    heroOutput.heroPlayerDisplay(".hero-quiz-display");
+    $("#stage-six").hide();
+    $("#stage-seven").show();
+    $('#fight-evil').click(function() {
+      $("#stage-seven").hide();
+      $("#stage-three").show();
+      heroFinder(heroOutput.heroName);
     });
+  });
 });
