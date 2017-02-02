@@ -136,11 +136,11 @@ Hero.prototype.heroPlayerDisplay = function(displayLocation) {
     profile += "<h1>";
     profile += this.heroName;
     profile += "</h1>";
-    profile += "<li >Given my preference, I woul " + this.motive + " the world.</li>";
-    profile += "<li>With my enemy in my hands, I am most tempted to " + this.idol + " them.</li>";
-    profile += "<li>My " + this.weapon + " is the most fabulous thing about me.</li>";
-    profile += "<li>My powers are best described as  " + this.subject + ".</li>";
-    profile += "<li>I like to reward my self with " + this.iceCream + " ice cream after a day of EVIL...</li></ul>";
+    profile += "<li >I fight for " + this.motive + "!</li>";
+    profile += "<li>" + this.idol + " is my idol.</li>";
+    profile += "<li>My " + this.weapon + " is my preferred tool when smiting evil.</li>";
+    profile += "<li>In school, my best subject was " + this.subject + ".</li>";
+    profile += "<li>I like to reward my self with " + this.iceCream + " ice cream after a day of thwarting villainous plans.</li></ul>";
     profile += '<button class="button-styling" id="fight-evil">Fight your evil nemesis</button>'
     $(displayLocation).empty();
     $(displayLocation).append(profile);
@@ -148,10 +148,10 @@ Hero.prototype.heroPlayerDisplay = function(displayLocation) {
 
 Villain.prototype.villainVictory = function(input) {
     var profile = '';
-    profile += "<h1>Victory Is Yours, " + this.villainName + "!</h2>";
+    profile += "<h1>Victory Is Yours, " + this.villainName + "!  Your pathetic opponent has been crushed.</h2>";
     profile += "<img src='" + this.img + "' class='villain-border' alt='image of '" + this.villainName + "'";
     profile += "<br><h2>";
-    profile += "In a battle of " + input + ", you have crushed your foe.";
+    profile += "In a battle of " + input + ", "+ this.villainName+" is victorious!";
     profile += "</h2>";
     $(".victory-display").empty();
     $(".victory-display").append(profile);
@@ -159,10 +159,10 @@ Villain.prototype.villainVictory = function(input) {
 
 Hero.prototype.heroVictory = function(input) {
     var profile = '';
-    profile += "<h1>A painful defeat by " + this.heroName + ", you pathetic scum!</h2>";
+    profile += "<h1>By the powers of good, " + this.heroName + " has prevailed</h2>";
     profile += "<img src='" + this.img + "' class='hero-border' alt='image of '" + this.heroName + "'";
     profile += "<br><h2>";
-    profile += "In a battle of " + input + ", you have been crushed!";
+    profile += "In a battle of " + input + ", "+ this.heroName + " is victorious!";
     profile += "</h2>";
     $(".victory-display").empty();
     $(".victory-display").append(profile);
