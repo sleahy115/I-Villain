@@ -28,7 +28,6 @@ h1 {
 .background-container img {
   opacity: 0.7;
 }
-
 .header {
   color: white;
   font-family: 'Barrio', cursive;
@@ -59,7 +58,7 @@ p {
 select {
   border: 1px solid #ff3300;
   background-color: #ffb84d;
-  color: #ff3300;
+  color: red;
   /*text-shadow: 2px 2px black;*/
   -webkit-appearance: none;
 }
@@ -70,15 +69,15 @@ select {
 #stage-two #heading, .font-design {
   color: white;
   font-family: 'Barrio', cursive;
-  font-size: 45px;
+  font-size: 6em;
   text-align: center;
   text-shadow: 2px 2px #ff3300;
 }
 #stage-two li{
   color: white;
-  font-family: 'Shadows Into Light', cursive;
+  font-family: 'Permanent Marker', cursive;
   font-size: 30px;
-  text-shadow: 2px 2px #ff3300;
+  padding: 20px;
   list-style-type: none;
 }
 #meet-foe {
@@ -107,7 +106,6 @@ select {
   display: block;
   margin: auto;
 }
-
 .icon-img img {
   max-width: 70px;
   max-height: 70px;
@@ -146,14 +144,11 @@ select {
   margin: 0 auto;
   margin-top: 30px;
   font-size: 25px;
-
 }
-
 #stage-five img {
   height: 100px;
   width:100px;
 }
-
 #pick-opponent{
   display: none;
 }
@@ -167,7 +162,6 @@ select {
   height: 100px;
   width: 100px;
 }
-
 #fight-button {
   display: none;
 }
