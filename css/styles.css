@@ -245,3 +245,7 @@ select {
   text-align: center;
   text-shadow: 2px 2px #ff3300;
 }
+
+#quiz-hero {
+  display: none;
+}
