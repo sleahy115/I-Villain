@@ -194,3 +194,7 @@ select {
 #stage-five.container {
   padding-left: 110px;
 }
+#stage-six {
+  display: none;
+  background-color: blue;
+}
