@@ -198,3 +198,7 @@ select {
   display: none;
   background-color: blue;
 }
+
+#quiz-hero {
+  display: none;
+}
