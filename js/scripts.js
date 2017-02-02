@@ -148,8 +148,12 @@ Hero.prototype.heroPlayerDisplay = function(displayLocation) {
 
 Villain.prototype.villainVictory = function(input) {
     var profile = '';
+
+  
+
     profile += "<h1>Victory Is Yours, " + this.villainName + "!  Your pathetic opponent has been crushed.</h2>";
-    profile += "<img src='" + this.img + "' class='villain-border' alt='image of '" + this.villainName + "'";
+    profile += "<img src='" + this.img + "' class='animated tada villain-border' alt='image of '" + this.villainName + "'";
+
     profile += "<br><h2>";
     profile += "In a battle of " + input + ", "+ this.villainName+" is victorious!";
     profile += "</h2>";
@@ -159,8 +163,10 @@ Villain.prototype.villainVictory = function(input) {
 
 Hero.prototype.heroVictory = function(input) {
     var profile = '';
+
     profile += "<h1>By the powers of good, " + this.heroName + " has prevailed</h2>";
-    profile += "<img src='" + this.img + "' class='hero-border' alt='image of '" + this.heroName + "'";
+    profile += "<img src='" + this.img + "' class='animated tada hero-border' alt='image of '" + this.heroName + "'";
+
     profile += "<br><h2>";
     profile += "In a battle of " + input + ", "+ this.heroName + " is victorious!";
     profile += "</h2>";
