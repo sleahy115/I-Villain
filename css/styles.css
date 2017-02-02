@@ -12,6 +12,7 @@ body {
   background-size: cover;
 }
 h1 {
+  text-align: center;
   font-size: 6em;
 }
 h2.font-design {
@@ -196,5 +197,16 @@ select {
 }
 #stage-six {
   display: none;
-  background-color: blue;
+  color: white;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 30px;
+  text-shadow: 2px 2px #ff3300;
+  background-color: rgba(0,0,0,0.7);
+  margin-top: 25px;
+}
+#hero-questions {
+  text-align: center;
+}
+#stage-six h1 {
+  font-size: 100px;
 }
