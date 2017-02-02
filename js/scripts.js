@@ -122,21 +122,36 @@ Villain.prototype.villainDisplay = function() {
     $(".display-villain").append(profile);
 }
 
-Hero.prototype.heroDisplay = function() {
+Hero.prototype.heroDisplay = function(displayLocation) {
     var profile = '';
     profile += "<img src='" + this.img + "' class='animated slideInRight hero-border' alt='image of '" + this.heroName + "'";
     profile += "<h1>";
     profile += this.heroName;
     profile += "</h1>";
-    $(".display-hero").append(profile);
+    $(displayLocation).append(profile);
+}
+Hero.prototype.heroPlayerDisplay = function(displayLocation) {
+    var profile = '';
+    profile += "<img src='" + this.img + "' class='animated slideInRight hero-border' alt='image of '" + this.heroName + "'";
+    profile += "<h1>";
+    profile += this.heroName;
+    profile += "</h1>";
+    profile += "<li >I fight for " + this.motive + "!</li>";
+    profile += "<li>" + this.idol + " is my idol.</li>";
+    profile += "<li>My " + this.weapon + " is my preferred tool when smiting evil.</li>";
+    profile += "<li>In school, my best subject was " + this.subject + ".</li>";
+    profile += "<li>I like to reward my self with " + this.iceCream + " ice cream after a day of thwarting villainous plans.</li></ul>";
+    profile += '<button class="button-styling" id="fight-evil">Fight your evil nemesis</button>'
+    $(displayLocation).empty();
+    $(displayLocation).append(profile);
 }
 
 Villain.prototype.villainVictory = function(input) {
     var profile = '';
-    profile += "<h1>Victory Is Yours, " + this.villainName + "!</h2>";
+    profile += "<h1>Victory Is Yours, " + this.villainName + "!  Your pathetic opponent has been crushed.</h2>";
     profile += "<img src='" + this.img + "' class='villain-border' alt='image of '" + this.villainName + "'";
     profile += "<br><h2>";
-    profile += "In a battle of " + input + ", you have crushed your foe.";
+    profile += "In a battle of " + input + ", "+ this.villainName+" is victorious!";
     profile += "</h2>";
     $(".victory-display").empty();
     $(".victory-display").append(profile);
@@ -144,10 +159,10 @@ Villain.prototype.villainVictory = function(input) {
 
 Hero.prototype.heroVictory = function(input) {
     var profile = '';
-    profile += "<h1>A painful defeat by " + this.heroName + ", you pathetic scum!</h2>";
+    profile += "<h1>By the powers of good, " + this.heroName + " has prevailed</h2>";
     profile += "<img src='" + this.img + "' class='hero-border' alt='image of '" + this.heroName + "'";
     profile += "<br><h2>";
-    profile += "In a battle of " + input + ", you have been crushed!";
+    profile += "In a battle of " + input + ", "+ this.heroName + " is victorious!";
     profile += "</h2>";
     $(".victory-display").empty();
     $(".victory-display").append(profile);
@@ -176,8 +191,9 @@ heroFinder = function(antagonist) {
         var finderRNG = Math.floor(Math.random() * 10);
         hero = heroArray[finderRNG]
     };
+
     $(".display-hero").empty();
-    hero.heroDisplay();
+    hero.heroDisplay(".display-hero");
     var villain = villainOutput;
     $(".display-villain").empty();
     opponent = hero.heroName;
@@ -221,26 +237,32 @@ var heroicTendency = function() {
     var heroTendency = "";
 
     for (var i = 0; i < heroArray.length; i++) {
-      console.log();
+      console.log(heroArray[i].heroName);
         var tempTendency = 0;
         if (herosAnswersArray[0] === heroArray[i].motive) {
             tempTendency++
+            console.log('motive match' + tempTendency)
         };
         if (herosAnswersArray[1] === heroArray[i].idol) {
             tempTendency++
+            console.log('idol match' + tempTendency)
         };
         if (herosAnswersArray[2] === heroArray[i].subject) {
             tempTendency++
+            console.log('subject match' + tempTendency)
         };
         if (herosAnswersArray[3] === heroArray[i].weapon) {
             tempTendency++
+            console.log('weapon match' + tempTendency)
         };
         if (herosAnswersArray[4] === heroArray[i].iceCream) {
             tempTendency++
+            console.log('ice cream match' + tempTendency)
         };
         if (tempTendency > highTendency) {
             heroTendency = heroArray[i].heroName;
             highTendency = tempTendency;
+            console.log("highTendency")
         };
     };
     for (var j = 0; j < heroArray.length; j++) {
@@ -322,6 +344,10 @@ $(function() {
         $("#stage-four").hide();
         heroFinder(opponent);
     });
+    $("#quiz-hero").click(function(){
+      $("#stage-four").hide();
+      $("#stage-six").show();
+    });
 
     $("form#hero-questions").submit(function(event){
       event.preventDefault();
@@ -330,7 +356,18 @@ $(function() {
       var costumeInput = $("#hero-subject").val();
       var powersInput = $("#hero-weapon").val();
       var iceCreamInput = $("#hero-iceCream").val();
+      herosAnswersArray =[];
       herosAnswersArray.push(motiveInput, victoryInput, costumeInput, powersInput, iceCreamInput);
-      heroOutput = heroicTendency(herosAnswersArray);
+      heroOutput = "";
+      heroOutput = heroicTendency();
+      console.log(heroOutput.heroName);
+      heroOutput.heroPlayerDisplay(".hero-quiz-display");
+      $("#stage-six").hide();
+      $("#stage-seven").show();
+      $('#fight-evil').click(function(){
+        $("#stage-seven").hide();
+        $("#stage-three").show();
+        heroFinder(heroOutput.heroName);
+      });
     });
 });
