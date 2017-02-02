@@ -105,7 +105,7 @@ Villain.prototype.villainProfile = function() {
     profile += "</h1>";
     profile += "<img src='" + this.img + "' class='animated rotateIn villain-border' alt='image of '" + this.villainName + "'";
     profile += "<ul>";
-    profile += "<li >Given my preference, I would " + this.motive + " the world.</li>";
+    profile += "<li>Given my preference, I would " + this.motive + " the world.</li>";
     profile += "<li>With my enemy in my hands, I am most tempted to " + this.victory + " them.</li>";
     profile += "<li>My " + this.costume + " is the most fabulous thing about me.</li>";
     profile += "<li>My powers are best described as  " + this.powers + ".</li>";
@@ -132,10 +132,10 @@ Hero.prototype.heroDisplay = function(displayLocation) {
 }
 Hero.prototype.heroPlayerDisplay = function(displayLocation) {
     var profile = '';
-    profile += "<img src='" + this.img + "' class='animated slideInRight hero-border' alt='image of '" + this.heroName + "'";
     profile += "<h1>";
     profile += this.heroName;
     profile += "</h1>";
+    profile += "<img src='" + this.img + "' class='animated slideInRight hero-border' alt='image of '" + this.heroName + "'<br>";
     profile += "<li >I fight for " + this.motive + "!</li>";
     profile += "<li>" + this.idol + " is my idol.</li>";
     profile += "<li>My " + this.weapon + " is my preferred tool when smiting evil.</li>";
@@ -149,9 +149,9 @@ Hero.prototype.heroPlayerDisplay = function(displayLocation) {
 Villain.prototype.villainVictory = function(input) {
     var profile = '';
 
-  
 
-    profile += "<h1>Victory Is Yours, " + this.villainName + "!  Your pathetic opponent has been crushed.</h2>";
+
+    profile += "<h1>Victory Is Yours, " + this.villainName + "!  Your pathetic opponent has been crushed.</h1>";
     profile += "<img src='" + this.img + "' class='animated tada villain-border' alt='image of '" + this.villainName + "'";
 
     profile += "<br><h2>";
@@ -164,7 +164,7 @@ Villain.prototype.villainVictory = function(input) {
 Hero.prototype.heroVictory = function(input) {
     var profile = '';
 
-    profile += "<h1>By the powers of good, " + this.heroName + " has prevailed</h2>";
+    profile += "<h1>By the powers of good, " + this.heroName + " has prevailed</h1>";
     profile += "<img src='" + this.img + "' class='animated tada hero-border' alt='image of '" + this.heroName + "'";
 
     profile += "<br><h2>";
