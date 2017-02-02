@@ -32,6 +32,8 @@ var villainOutput;
 var hero;
 var opponent;
 var testInput;
+var herosAnswersArray = [];
+var heroOutput;
 
 var darthVader = new Villain('Darth Vader', 'img/darth-vader.jpg', 4, 2, 3, 'dominate', 'convert', 'helmet', 'supernatural', 'lactose-intolerance');
 var alienQueen = new Villain('Alien Queen', 'img/alien.jpg', 5, 4, 1, 'dominate', 'kill', 'body', 'physical', 'strawberry');
@@ -214,6 +216,41 @@ battleFinder = function(testType) {
     };
 };
 
+var heroicTendency = function() {
+    var highTendency = 0;
+    var heroTendency = "";
+
+    for (var i = 0; i < heroArray.length; i++) {
+      console.log();
+        var tempTendency = 0;
+        if (herosAnswersArray[0] === heroArray[i].motive) {
+            tempTendency++
+        };
+        if (herosAnswersArray[1] === heroArray[i].idol) {
+            tempTendency++
+        };
+        if (herosAnswersArray[2] === heroArray[i].subject) {
+            tempTendency++
+        };
+        if (herosAnswersArray[3] === heroArray[i].weapon) {
+            tempTendency++
+        };
+        if (herosAnswersArray[4] === heroArray[i].iceCream) {
+            tempTendency++
+        };
+        if (tempTendency > highTendency) {
+            heroTendency = heroArray[i].heroName;
+            highTendency = tempTendency;
+        };
+    };
+    for (var j = 0; j < heroArray.length; j++) {
+        if (heroTendency === heroArray[j].heroName) {
+          console.log(heroTendency);
+            return heroArray[j];
+        };
+    };
+};
+
 // User Logic
 $(function() {
     $("form#villain-questions").submit(function(event) {
@@ -284,5 +321,16 @@ $(function() {
         $("#stage-three").show();
         $("#stage-four").hide();
         heroFinder(opponent);
+    });
+
+    $("form#hero-questions").submit(function(event){
+      event.preventDefault();
+      var motiveInput = $("#hero-motive").val();
+      var victoryInput = $("#hero-idol").val();
+      var costumeInput = $("#hero-subject").val();
+      var powersInput = $("#hero-weapon").val();
+      var iceCreamInput = $("#hero-iceCream").val();
+      herosAnswersArray.push(motiveInput, victoryInput, costumeInput, powersInput, iceCreamInput);
+      heroOutput = heroicTendency(herosAnswersArray);
     });
 });
