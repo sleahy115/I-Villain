@@ -32,6 +32,8 @@ var villainOutput;
 var hero;
 var opponent;
 var testInput;
+var herosAnswersArray = [];
+var heroOutput;
 
 var darthVader = new Villain('Darth Vader', 'img/darth-vader.jpg', 4, 2, 3, 'dominate', 'convert', 'helmet', 'supernatural', 'lactose-intolerance');
 var alienQueen = new Villain('Alien Queen', 'img/alien.jpg', 5, 4, 1, 'dominate', 'kill', 'body', 'physical', 'strawberry');
@@ -48,16 +50,16 @@ var loki = new Villain('Loki', 'img/loki.png', 2, 3, 5, 'destroy', 'kill', 'helm
 var villainsArray = [];
 villainsArray.push(darthVader, alienQueen, bellatrix, whiteWitch, skeletor, sauron, terminator, gru, goblinKing, khan, loki)
 
-var hermione = new Hero('Hermione', 'img/hermione.jpg', 2, 4, 5, 'freedom','mlk', 'languages', 'wand');
-var mrIncredible = new Hero('Mr. Incredible', 'img/mr-incredible.jpg', 5, 4, 2, 'justice', 'superman', 'pe', 'strength' );
-var glenda = new Hero('Glenda the Good Witch', 'img/glinda-the-good-witch.jpg', 2, 4, 4, 'freedom');
-var batman = new Hero('Batman', 'img/batman.jpg', 4, 3, 4, 'justice');
-var daenerys = new Hero('Daenerys', 'img/daenerys.jpg', 2, 2, 4, 'justice');
-var roadRunner = new Hero('Road Runner', 'img/roadrunner.png', 1, 5, 4, 'freedom');
-var dudleyDoRight = new Hero('Dudley Do Right', 'img/dudley-do-right.jpg', 3, 4, 1, 'justice');
-var superMario = new Hero('Super Mario', 'img/Super-Mario.jpg', 4, 4, 2, 'freedom');
-var docBrown = new Hero('Doc Brown', 'img/doc-brown.jpg', 2, 5, 5, 'justice');
-var professorX = new Hero('Professor X', 'img/prof-x.jpg', 5, 1, 5, 'justice');
+var hermione = new Hero('Hermione', 'img/hermione.jpg', 2, 4, 5, 'freedom','mlk', 'languages', 'wand', 'lactose-intolerance');
+var mrIncredible = new Hero('Mr. Incredible', 'img/mr-incredible.jpg', 5, 4, 2, 'justice', 'superman', 'pe', 'strength', 'vanilla' );
+var glenda = new Hero('Glenda the Good Witch', 'img/glinda-the-good-witch.jpg', 2, 4, 4, 'freedom', 'mrsobama', 'government', 'wand', 'bubble-gum');
+var batman = new Hero('Batman', 'img/batman.jpg', 4, 3, 4, 'justice', 'giuliani', 'science', 'strength', 'chocolate' );
+var daenerys = new Hero('Daenerys', 'img/daenerys.jpg', 2, 2, 4, 'justice', 'mlk', 'government', 'dragons', 'rocky-road');
+var roadRunner = new Hero('Road Runner', 'img/roadrunner.png', 1, 5, 4, 'freedom', 'bolt', 'pe','trickery', 'rocky-road');
+var dudleyDoRight = new Hero('Dudley Do Right', 'img/dudley-do-right.jpg', 3, 4, 1, 'justice', 'superman', 'government', 'strength', 'cherry-garcia');
+var superMario = new Hero('Super Mario', 'img/Super-Mario.jpg', 4, 4, 2, 'freedom', 'giuliani', 'pe', 'strength', 'mint-chip');
+var docBrown = new Hero('Doc Brown', 'img/doc-brown.jpg', 2, 5, 5, 'justice', 'mrsobama', 'science','genius', 'chunky-monkey');
+var professorX = new Hero('Professor X', 'img/prof-x.jpg', 5, 1, 5, 'justice', 'mlk', 'science', 'genius', 'pistachio');
 
 var heroArray = [];
 
@@ -214,6 +216,41 @@ battleFinder = function(testType) {
     };
 };
 
+var heroicTendency = function() {
+    var highTendency = 0;
+    var heroTendency = "";
+
+    for (var i = 0; i < heroArray.length; i++) {
+      console.log();
+        var tempTendency = 0;
+        if (herosAnswersArray[0] === heroArray[i].motive) {
+            tempTendency++
+        };
+        if (herosAnswersArray[1] === heroArray[i].idol) {
+            tempTendency++
+        };
+        if (herosAnswersArray[2] === heroArray[i].subject) {
+            tempTendency++
+        };
+        if (herosAnswersArray[3] === heroArray[i].weapon) {
+            tempTendency++
+        };
+        if (herosAnswersArray[4] === heroArray[i].iceCream) {
+            tempTendency++
+        };
+        if (tempTendency > highTendency) {
+            heroTendency = heroArray[i].heroName;
+            highTendency = tempTendency;
+        };
+    };
+    for (var j = 0; j < heroArray.length; j++) {
+        if (heroTendency === heroArray[j].heroName) {
+          console.log(heroTendency);
+            return heroArray[j];
+        };
+    };
+};
+
 // User Logic
 $(function() {
     $("form#villain-questions").submit(function(event) {
@@ -284,5 +321,16 @@ $(function() {
         $("#stage-three").show();
         $("#stage-four").hide();
         heroFinder(opponent);
+    });
+
+    $("form#hero-questions").submit(function(event){
+      event.preventDefault();
+      var motiveInput = $("#hero-motive").val();
+      var victoryInput = $("#hero-idol").val();
+      var costumeInput = $("#hero-subject").val();
+      var powersInput = $("#hero-weapon").val();
+      var iceCreamInput = $("#hero-iceCream").val();
+      herosAnswersArray.push(motiveInput, victoryInput, costumeInput, powersInput, iceCreamInput);
+      heroOutput = heroicTendency(herosAnswersArray);
     });
 });
