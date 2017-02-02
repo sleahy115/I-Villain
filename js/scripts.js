@@ -43,7 +43,7 @@ var skeletor = new Villain('Skeletor', 'img/skelator.jpg', 4, 2, 1, 'dominate', 
 var sauron = new Villain('Sauron', 'img/the-eye-of-sauron.jpg', 5, 1, 5, 'destroy', 'convert', 'body', 'supernatural', 'chunky-monkey');
 var terminator = new Villain('Terminator', 'img/terminator.jpg', 5, 4, 1, 'dominate', 'kill', 'body', 'mechanical', 'rocky-road');
 var gru = new Villain('Gru', 'img/Gru.jpg', 2, 2, 5, 'dominate', 'convert', 'black', 'mechanical', 'chocolate');
-var goblinKing = new Villain('Goblin King', 'img/goblin-king.jpg', 3, 3, 4, 'dominate', 'convert', 'cape', 'suernatural', 'pistachio');
+var goblinKing = new Villain('Goblin King', 'img/goblin-king.jpg', 3, 3, 4, 'dominate', 'convert', 'cape', 'supernatural', 'pistachio');
 var khan = new Villain('Khan', 'img/khan.jpeg', 4, 4, 4, 'destroy', 'convert', 'body', 'physical', 'strawberry-sorbet');
 var loki = new Villain('Loki', 'img/loki.png', 2, 3, 5, 'destroy', 'kill', 'helmet', 'supernatural', 'cherry-garcia');
 
