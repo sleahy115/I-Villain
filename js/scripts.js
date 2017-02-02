@@ -122,13 +122,28 @@ Villain.prototype.villainDisplay = function() {
     $(".display-villain").append(profile);
 }
 
-Hero.prototype.heroDisplay = function() {
+Hero.prototype.heroDisplay = function(displayLocation) {
     var profile = '';
     profile += "<img src='" + this.img + "' class='animated slideInRight hero-border' alt='image of '" + this.heroName + "'";
     profile += "<h1>";
     profile += this.heroName;
     profile += "</h1>";
-    $(".display-hero").append(profile);
+    $(displayLocation).append(profile);
+}
+Hero.prototype.heroPlayerDisplay = function(displayLocation) {
+    var profile = '';
+    profile += "<img src='" + this.img + "' class='animated slideInRight hero-border' alt='image of '" + this.heroName + "'";
+    profile += "<h1>";
+    profile += this.heroName;
+    profile += "</h1>";
+    profile += "<li >Given my preference, I woul " + this.motive + " the world.</li>";
+    profile += "<li>With my enemy in my hands, I am most tempted to " + this.idol + " them.</li>";
+    profile += "<li>My " + this.weapon + " is the most fabulous thing about me.</li>";
+    profile += "<li>My powers are best described as  " + this.subject + ".</li>";
+    profile += "<li>I like to reward my self with " + this.iceCream + " ice cream after a day of EVIL...</li></ul>";
+    profile += '<button class="button-styling" id="fight-evil">Fight your evil nemesis</button>'
+    $(displayLocation).empty();
+    $(displayLocation).append(profile);
 }
 
 Villain.prototype.villainVictory = function(input) {
@@ -176,8 +191,9 @@ heroFinder = function(antagonist) {
         var finderRNG = Math.floor(Math.random() * 10);
         hero = heroArray[finderRNG]
     };
+
     $(".display-hero").empty();
-    hero.heroDisplay();
+    hero.heroDisplay(".display-hero");
     var villain = villainOutput;
     $(".display-villain").empty();
     opponent = hero.heroName;
@@ -221,26 +237,32 @@ var heroicTendency = function() {
     var heroTendency = "";
 
     for (var i = 0; i < heroArray.length; i++) {
-      console.log();
+      console.log(heroArray[i].heroName);
         var tempTendency = 0;
         if (herosAnswersArray[0] === heroArray[i].motive) {
             tempTendency++
+            console.log('motive match' + tempTendency)
         };
         if (herosAnswersArray[1] === heroArray[i].idol) {
             tempTendency++
+            console.log('idol match' + tempTendency)
         };
         if (herosAnswersArray[2] === heroArray[i].subject) {
             tempTendency++
+            console.log('subject match' + tempTendency)
         };
         if (herosAnswersArray[3] === heroArray[i].weapon) {
             tempTendency++
+            console.log('weapon match' + tempTendency)
         };
         if (herosAnswersArray[4] === heroArray[i].iceCream) {
             tempTendency++
+            console.log('ice cream match' + tempTendency)
         };
         if (tempTendency > highTendency) {
             heroTendency = heroArray[i].heroName;
             highTendency = tempTendency;
+            console.log("highTendency")
         };
     };
     for (var j = 0; j < heroArray.length; j++) {
@@ -322,6 +344,10 @@ $(function() {
         $("#stage-four").hide();
         heroFinder(opponent);
     });
+    $("#quiz-hero").click(function(){
+      $("#stage-four").hide();
+      $("#stage-six").show();
+    });
 
     $("form#hero-questions").submit(function(event){
       event.preventDefault();
@@ -330,7 +356,18 @@ $(function() {
       var costumeInput = $("#hero-subject").val();
       var powersInput = $("#hero-weapon").val();
       var iceCreamInput = $("#hero-iceCream").val();
+      herosAnswersArray =[];
       herosAnswersArray.push(motiveInput, victoryInput, costumeInput, powersInput, iceCreamInput);
-      heroOutput = heroicTendency(herosAnswersArray);
+      heroOutput = "";
+      heroOutput = heroicTendency();
+      console.log(heroOutput.heroName);
+      heroOutput.heroPlayerDisplay(".hero-quiz-display");
+      $("#stage-six").hide();
+      $("#stage-seven").show();
+      $('#fight-evil').click(function(){
+        $("#stage-seven").hide();
+        $("#stage-three").show();
+        heroFinder(heroOutput.heroName);
+      });
     });
 });
