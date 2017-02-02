@@ -105,7 +105,7 @@ Villain.prototype.villainProfile = function() {
     profile += "</h1>";
     profile += "<img src='" + this.img + "' class='animated rotateIn villain-border' alt='image of '" + this.villainName + "'";
     profile += "<ul>";
-    profile += "<li>Given my preference, I would " + this.motive + " the world.</li>";
+    profile += "<li></li><li>Given my preference, I would " + this.motive + " the world.</li>";
     profile += "<li>With my enemy in my hands, I am most tempted to " + this.victory + " them.</li>";
     profile += "<li>My " + this.costume + " is the most fabulous thing about me.</li>";
     profile += "<li>My powers are best described as  " + this.powers + ".</li>";
@@ -136,12 +136,12 @@ Hero.prototype.heroPlayerDisplay = function(displayLocation) {
     profile += this.heroName;
     profile += "</h1>";
     profile += "<img src='" + this.img + "' class='animated slideInRight hero-border' alt='image of '" + this.heroName + "'<br>";
-    profile += "<li >I fight for " + this.motive + "!</li>";
+    profile += "<li></li><li>I fight for " + this.motive + "!</li>";
     profile += "<li>" + this.idol + " is my idol.</li>";
     profile += "<li>My " + this.weapon + " is my preferred tool when smiting evil.</li>";
     profile += "<li>In school, my best subject was " + this.subject + ".</li>";
     profile += "<li>I like to reward my self with " + this.iceCream + " ice cream after a day of thwarting villainous plans.</li></ul>";
-    profile += '<button class="button-styling" id="fight-evil">Fight your evil nemesis</button>'
+    profile += '<button class="button-styling" id="fight-evil">Fight your  nemesis</button>'
     $(displayLocation).empty();
     $(displayLocation).append(profile);
 }

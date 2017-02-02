@@ -208,8 +208,11 @@ select {
   text-align: center;
 }
 #stage-six h1 {
-  font-size: 100px;
-  text-shadow: 2px 2px green;
+  color: white;
+  font-family: 'Barrio', cursive;
+  font-size: 3em;
+  text-align: center;
+  text-shadow: 2px 2px #ff3300;
 }
 #stage-six h3 {
   text-shadow: 2px 2px green;
@@ -219,7 +222,6 @@ select {
   border: 1px solid gray;
 }
 #stage-seven {
-  color: white;
   text-align: center;
 }
 #stage-seven #heading, .font-design {
