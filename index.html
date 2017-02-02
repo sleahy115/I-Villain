@@ -21,7 +21,6 @@
     </div>
     <div class="background-container">
       <div class="row">
-        <div class="col-md-6">
           <div class="form-group">
             <form class="form-group" id="villain-questions">
               <h3>Question 1.</h3>
@@ -65,11 +64,12 @@
                 <option value="mint-chip">Mint Chip, poisonous green with black flakes, like my soul.</option>
                 <option value="chocolate">Chocolate, dark as the mud where I leave my enemies.</option>
               </select>
-              <br>
-              <button type="submit" class="villain-submit button-styling">Which villain am I?</button>
+              <div class="row">
+                <button type="submit" class="villain-submit button-styling">Which villain am I?</button>
+
+              </div>
             </form>
           </div>
-        </div>
       </div>
     </div>
   </div>
@@ -93,22 +93,26 @@
     </div>
     <h2 class="font-design">Choose your weapon...</h2>
     <div class="row">
+
       <div class="col-md-4">
-        <input type="image" id="strength" src="img/strength.jpg" value="strength" name="skillTest">
+        <input class='hoverable' type="image" id="strength" src="img/strength.jpg" value="strength" name="skillTest">
       </div>
+
+      <div class="col-md-4">
+         <input class='hoverable' type="image" id="speed" src="img/red-rocket.jpg" value="speed" name="skillTest">
+      </div>
+
+      <div class="col-md-4">
+        <input class='hoverable' type="image" id="wits" value="wits" src="img/red-brain.jpg" name="skillTest">
+      </div>
+
     </div>
-    <div class="col-md-4">
-       <input type="image" id="speed" src="img/red-rocket.jpg" value="speed" name="skillTest">
-    </div>
-    <div class="col-md-4">
-      <input type="image" id="wits" value="wits" src="img/red-brain.jpg" name="skillTest">
-    </div>
-  </div>
+
     <div class="row">
       <div class="col-md-12">
-         <button type='button' class="button-styling" id='fight-button'>Battle!</button>;
+         <button type='button' class="button-styling" id='fight-button'>Battle your nemisis!</button>;
       </div>
-     </div>
+    </div>
   <div class="container" id="stage-four">
     <div class="victory-display" id="victory-display">
     </div>
