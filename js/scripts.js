@@ -149,7 +149,7 @@ Hero.prototype.heroPlayerDisplay = function(displayLocation) {
 Villain.prototype.villainVictory = function(input) {
     var profile = '';
 
-  
+
 
     profile += "<h1>Victory Is Yours, " + this.villainName + "!  Your pathetic opponent has been crushed.</h2>";
     profile += "<img src='" + this.img + "' class='animated tada villain-border' alt='image of '" + this.villainName + "'";
@@ -323,6 +323,8 @@ $(function() {
         $("#pick-opponent").show();
         $("#pick-again").show();
         $("#new-weapon").show();
+        $("#quiz-hero").show();
+
         battleFinder(testInput);
     });
 
