@@ -51,7 +51,7 @@ User completes a five question quiz, the answers of which determine which villai
 ## Setup/Installation Requirements
 
 * _The game can be accessed at sleahy115.github.io/I-Villain_
-* _Clone this application at https://github.com/dlauby/i-villain.git_
+* _Clone repository from github._
 * _Locate index.html file within to-do-list directory_
 * _Open index.html in preferred browser_
 * _Play_
