@@ -29,21 +29,21 @@ User completes a five question quiz, the answers of which determine which villai
 
 ## Specifications
 
-| Behavior                                              |   Input example   |
+| Behavior                                              |   Outcome   |
 |-------------------------------------------------------|:-----------------:|   
 | User takes quiz.| User values are used to determine a villain.|
 | User values are matched against preset values for the villains in the game.| [dominate, kill, helmet, supernatural, chocolate]|
 | User is assigned villain based on the highest number of matching attributes | User inputs matches three attributes of Darth Vader, Darth Vader is output.|
-|User's assigned villain is assigned a "nemesis." | A hero is randomly assigned from the hero array.|
-|User chooses an attribute to fight the assigned nemesis on Speed, Strength, or wits. | each hero and villain have assigned strength, speed, and wits values|
-|villain attribute compared to hero attribute| Hero strength = 3, villain strength =4|
-|A random number between 0-1 is assigned to both attributes to prevent a tie and keep the game dynamic| Hero RNG = .0345, villain strength RNG = .1245|
-|A winner is determined| Hero strength + hero RNG vs villain strength + villain RNG|
-|The winner is output and the user has several options to continue the game|1.Play as a different villain, 2. Choose another hero to battle, 3. Battle the same hero using a different attribute. 4. Take a quiz to determine which hero you are|
-|If option 1 is chosen| User is taken back to the main page to retake the villain quiz|
-|If option 2 is chosen| User is presented with a list of heroes, once one has been selected the user is returned to the battle screen to choose an attribute|
-|If option 3 is chosen| User is returned to the battle page and is able to select a different attribute|
-|If option 4 is chosen| User is taken to a new quiz page and is assigned a hero in a using the same process as the villain selection. Then the user is able to pit their assigned hero against their assigned villain using the battle page.|
+|The user's assigned villain is assigned a hero "nemesis." | A hero is randomly assigned from the hero array.|
+|User chooses an attribute to fight the assigned nemesis. The options are speed, strength, and wits. | Each hero and villain have assigned strength, speed, and wits values.|
+|Villain attribute compared to hero attribute| Hero strength = 3, villain strength = 4.|
+|A random number between 0-1 is assigned to both attributes to prevent a tie and keep the game dynamic.| Hero RNG = .0345, villain strength RNG = .1245|
+|A winner is determined.| Hero strength + hero RNG vs villain strength + villain RNG|
+|The winner is output and the user has several options to continue the game.| 1.Play as a different villain. 2. Choose another hero to battle. 3. Battle the same hero using a different attribute. 4. Take a quiz to determine which hero you are.|
+|If option 1 is chosen...| User is taken back to the main page to retake the villain quiz.|
+|If option 2 is chosen...| User is presented with a list of heroes, once one has been selected the user is returned to the battle screen to choose an attribute.|
+|If option 3 is chosen...| User is returned to the battle page and is able to select a different attribute.|
+|If option 4 is chosen...| User is taken to a new quiz page and is assigned a hero using the same process as the villain selection. Then the user is able to pit their assigned hero against their assigned villain using the battle page.|
 |The game continues through all of the steps as many times as the user wishes. There is no defined end to the game.|
 
 
@@ -64,7 +64,7 @@ _There are no known present at this time._
 
 ## Support and contact details
 
-_Please contact me at ccbpeden@warpmail.net if you have any questions or are interested in contributing._
+_Please contact sleahy115@gmail.com or ccbpeden@warpmail.net  if you have any questions or are interested in contributing._
 
 ## Technologies Used
 
